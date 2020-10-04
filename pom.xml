@@ -51,9 +51,9 @@
         <module>hibernate</module>
 		-->
         <module>jakarta</module>
-	<!--
-        <module>micronaut</module>
-		<module>spring-data</module>
-		-->
+        <module>spring-data</module>
+        <!--
+            <module>micronaut</module>
+            -->
     </modules>
 </project>

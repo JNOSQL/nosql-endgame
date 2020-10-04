@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "2af2a296-47c0-42d5-809b-e07fb69a1042",
+		"name": "NoSQL Endgame",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllGods()",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"toExtendDocument\": {\n        \"bytes\": \"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\",\n        \"name\": \"container-signed-xades-baseline-b.asice\"\n    },\n    \"parameters\": {\n        \"signWithExpiredCertificate\": false,\n        \"signatureLevel\": \"XAdES_BASELINE_T\",\n        \"signaturePackaging\": null,\n        \"signatureAlgorithm\": \"RSA_SHA256\",\n        \"encryptionAlgorithm\": \"RSA\",\n        \"digestAlgorithm\": \"SHA256\",\n        \"signatureTimestampParameters\": {\n            \"digestAlgorithm\": \"SHA256\",\n            \"canonicalizationMethod\": \"http://www.w3.org/2001/10/xml-exc-c14n#\"\n        },\n        \"archiveTimestampParameters\": {\n            \"digestAlgorithm\": \"SHA256\",\n            \"canonicalizationMethod\": \"http://www.w3.org/2001/10/xml-exc-c14n#\"\n        },\n        \"contentTimestampParameters\": {\n            \"digestAlgorithm\": \"SHA256\",\n            \"canonicalizationMethod\": \"http://www.w3.org/2001/10/xml-exc-c14n#\"\n        },\n        \"signingCertificate\": null,\n        \"certificateChain\": [],\n        \"detachedContents\": null,\n        \"asicContainerType\": \"ASiC_E\",\n        \"blevelParams\": {\n            \"trustAnchorBPPolicy\": true,\n            \"signingDate\": 1486133879572,\n            \"claimedSignerRoles\": null,\n            \"commitmentTypeIndications\": null\n        }\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/gods",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"gods"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllGodsByNameContaining()",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/gods?name=Her",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"gods"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Her"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getGodById()",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"toExtendDocument\": {\n        \"bytes\": \"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\",\n        \"name\": \"container-signed-xades-baseline-b.asice\"\n    },\n    \"parameters\": {\n        \"signWithExpiredCertificate\": false,\n        \"signatureLevel\": \"XAdES_BASELINE_T\",\n        \"signaturePackaging\": null,\n        \"signatureAlgorithm\": \"RSA_SHA256\",\n        \"encryptionAlgorithm\": \"RSA\",\n        \"digestAlgorithm\": \"SHA256\",\n        \"signatureTimestampParameters\": {\n            \"digestAlgorithm\": \"SHA256\",\n            \"canonicalizationMethod\": \"http://www.w3.org/2001/10/xml-exc-c14n#\"\n        },\n        \"archiveTimestampParameters\": {\n            \"digestAlgorithm\": \"SHA256\",\n            \"canonicalizationMethod\": \"http://www.w3.org/2001/10/xml-exc-c14n#\"\n        },\n        \"contentTimestampParameters\": {\n            \"digestAlgorithm\": \"SHA256\",\n            \"canonicalizationMethod\": \"http://www.w3.org/2001/10/xml-exc-c14n#\"\n        },\n        \"signingCertificate\": null,\n        \"certificateChain\": [],\n        \"detachedContents\": null,\n        \"asicContainerType\": \"ASiC_E\",\n        \"blevelParams\": {\n            \"trustAnchorBPPolicy\": true,\n            \"signingDate\": 1486133879572,\n            \"claimedSignerRoles\": null,\n            \"commitmentTypeIndications\": null\n        }\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/gods/5f789b086997ea37498ed9a2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"gods",
+						"5f789b086997ea37498ed9a2"
+					]
+				},
+				"description": "all gods"
+			},
+			"response": []
+		},
+		{
+			"name": "addGod()",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"test\",\n\t\"power\": \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/gods",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"gods"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateGodById()",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Hera\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/gods/5f789b316997ea37498ed9a3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"gods",
+						"5f789b316997ea37498ed9a3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteGodById()",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/gods/5f78ad9e3efd310563ef3fad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"gods",
+						"5f78ad9e3efd310563ef3fad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAllGods()",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/gods",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"gods"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
