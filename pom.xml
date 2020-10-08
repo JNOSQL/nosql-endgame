@@ -51,7 +51,8 @@
         <module>hibernate</module>
 		-->
         <module>jakarta</module>
-        <module>spring-data</module>
+        <module>spring-boot-data-mongodb</module>
+        <module>spring-boot-data-neo4j</module>
         <!--
             <module>micronaut</module>
             -->

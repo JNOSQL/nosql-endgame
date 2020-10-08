@@ -1,4 +1,4 @@
-package org.jnosql.demo.endgame.spring.data;
+package org.jnosql.demo.endgame.spring.boot.data.mongodb.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
