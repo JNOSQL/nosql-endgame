@@ -8,6 +8,7 @@
     <artifactId>spring</artifactId>	
     <name>spring-nosql-demo</name>
     <url>http://www.jnosql.org</url>
+	<packaging>pom</packaging>
 
     <modules>
         <module>spring-boot-data-mongodb</module>

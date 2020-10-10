@@ -30,10 +30,8 @@ import static org.jnosql.demo.endgame.jakarta.neo4j.Person.builder;
 
 public final class MarketingApp {
 
-
     private MarketingApp() {
     }
-
 
     public static void main(String[] args) {
 
@@ -46,7 +44,7 @@ public final class MarketingApp {
             Person natalia = graph.insert(builder().withAge(32).withName("Natalia")
                     .withOccupation("Developer").withSalary(5_000D).build());
 
-            Person rose = graph.insert(builder().withAge(40).withName("Rose")
+            Person rose = graph.insert(builder().withAge(40).withName("Pepper")
                     .withOccupation("Design").withSalary(1_000D).build());
 
             Person tony = graph.insert(builder().withAge(50).withName("Tony")

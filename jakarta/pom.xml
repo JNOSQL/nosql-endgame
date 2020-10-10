@@ -20,7 +20,7 @@
     <groupId>org.jnosql.demo.endgame</groupId>
 	<artifactId>jakarta-nosql-demos</artifactId>
     <packaging>pom</packaging>
-    <name>Jakarta EE Demos</name>
+    <name>Jakarta NoSQL Demos</name>
     <parent>
 		<groupId>org.jnosql.demo</groupId>
 		<artifactId>endgame-parent</artifactId>
