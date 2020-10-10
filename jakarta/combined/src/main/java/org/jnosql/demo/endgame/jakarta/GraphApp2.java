@@ -4,7 +4,6 @@ import org.eclipse.jnosql.artemis.graph.GraphTemplate;
 
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
-import java.util.Optional;
 
 public class GraphApp2 {
 

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.jnosql.demo.endgame</groupId>
+    <artifactId>jakarta-nosql-combined</artifactId>
+    <version>0.1-SNAPSHOT</version>
+
+    <name>jakarta-nosql-combined</name>
+    <url>http://www.jnosql.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <weld.se.core.version>3.1.4.Final</weld.se.core.version>
+        <jakarta.nosql.version>1.0.0-b2</jakarta.nosql.version>
+    </properties>
+
+    <dependencies>
+        <!--CDI-->
+        <dependency>
+            <groupId>org.jboss.weld.se</groupId>
+            <artifactId>weld-se-shaded</artifactId>
+            <version>${weld.se.core.version}</version>
+        </dependency>
+        <!--JSON Binding-->
+        <dependency>
+            <groupId>org.eclipse</groupId>
+            <artifactId>yasson</artifactId>
+            <version>1.0.7</version>
+        </dependency>
+        <!--Eclipse MicroProfile Configuration-->
+        <dependency>
+            <groupId>io.smallrye.config</groupId>
+            <artifactId>smallrye-config</artifactId>
+            <version>1.8.5</version>
+        </dependency>
+        <!--mapper dependency-->
+        <dependency>
+            <groupId>org.eclipse.jnosql.artemis</groupId>
+            <artifactId>artemis-document</artifactId>
+            <version>${jakarta.nosql.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jnosql.artemis</groupId>
+            <artifactId>artemis-key-value</artifactId>
+            <version>${jakarta.nosql.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jnosql.artemis</groupId>
+            <artifactId>artemis-column</artifactId>
+            <version>${jakarta.nosql.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jnosql.artemis</groupId>
+            <artifactId>artemis-graph</artifactId>
+            <version>${jakarta.nosql.version}</version>
+        </dependency>
+        <!--communication-->
+        <dependency>
+            <groupId>org.eclipse.jnosql.diana</groupId>
+            <artifactId>mongodb-driver</artifactId>
+            <version>${jakarta.nosql.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jnosql.diana</groupId>
+            <artifactId>cassandra-driver</artifactId>
+            <version>${jakarta.nosql.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jnosql.diana</groupId>
+            <artifactId>redis-driver</artifactId>
+            <version>${jakarta.nosql.version}</version>
+        </dependency>
+
+        <!--Graph-->
+        <dependency>
+            <groupId>org.apache.tinkerpop</groupId>
+            <artifactId>gremlin-groovy</artifactId>
+            <version>3.4.7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.steelbridgelabs.oss</groupId>
+            <artifactId>neo4j-gremlin-bolt</artifactId>
+            <version>0.4.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.neo4j.driver</groupId>
+            <artifactId>neo4j-java-driver</artifactId>
+            <version>4.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jnosql.artemis</groupId>
+            <artifactId>graph-connections</artifactId>
+            <version>${jakarta.nosql.version}</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>oss.sonatype.org-snapshot</id>
+            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+</project>
