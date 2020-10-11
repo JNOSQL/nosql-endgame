@@ -1,6 +1,6 @@
-package org.jnosql.demo.endgame.spring.boot.data.mongodb.repository;
+package org.jnosql.demo.endgame.spring.mongodb.repository;
 
-import org.jnosql.demo.endgame.spring.boot.data.mongodb.model.God;
+import org.jnosql.demo.endgame.spring.mongodb.model.God;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 

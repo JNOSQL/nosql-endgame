@@ -1,7 +1,7 @@
-package org.jnosql.demo.endgame.spring.boot.data.neo4j.api;
+package org.jnosql.demo.endgame.spring.neo4j.api;
 
-import org.jnosql.demo.endgame.spring.boot.data.neo4j.domain.MovieEntity;
-import org.jnosql.demo.endgame.spring.boot.data.neo4j.domain.MovieRepository;
+import org.jnosql.demo.endgame.spring.neo4j.domain.MovieEntity;
+import org.jnosql.demo.endgame.spring.neo4j.domain.MovieRepository;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import reactor.core.publisher.Flux;

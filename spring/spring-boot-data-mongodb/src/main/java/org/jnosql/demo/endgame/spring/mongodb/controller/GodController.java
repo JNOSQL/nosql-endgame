@@ -1,7 +1,7 @@
-package org.jnosql.demo.endgame.spring.boot.data.mongodb.controller;
+package org.jnosql.demo.endgame.spring.mongodb.controller;
 
-import org.jnosql.demo.endgame.spring.boot.data.mongodb.repository.GodRepository;
-import org.jnosql.demo.endgame.spring.boot.data.mongodb.model.God;
+import org.jnosql.demo.endgame.spring.mongodb.repository.GodRepository;
+import org.jnosql.demo.endgame.spring.mongodb.model.God;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

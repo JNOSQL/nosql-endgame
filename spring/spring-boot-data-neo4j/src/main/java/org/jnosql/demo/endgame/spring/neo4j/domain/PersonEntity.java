@@ -1,4 +1,4 @@
-package org.jnosql.demo.endgame.spring.boot.data.neo4j.domain;
+package org.jnosql.demo.endgame.spring.neo4j.domain;
 
 import org.neo4j.springframework.data.core.schema.Id;
 import org.neo4j.springframework.data.core.schema.Node;

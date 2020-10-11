@@ -1,4 +1,4 @@
-package org.jnosql.demo.endgame.spring.boot.data.mongodb;
+package org.jnosql.demo.endgame.spring.mongodb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
