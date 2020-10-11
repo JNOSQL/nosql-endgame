@@ -11,10 +11,10 @@
  * Contributors:
  *
  * Otavio Santana
- * Werner Keil
  */
 
-package org.jnosql.demo.endgame.jakarta.neo4j;
+package org.jnosql.endgame.jakarta.janus;
+
 
 import org.eclipse.jnosql.artemis.graph.GraphTemplate;
 
@@ -25,53 +25,54 @@ import java.util.List;
 import static java.util.stream.Collectors.toList;
 import static org.apache.tinkerpop.gremlin.process.traversal.P.between;
 import static org.apache.tinkerpop.gremlin.process.traversal.P.gte;
-import static org.jnosql.demo.endgame.jakarta.neo4j.Person.builder;
 
 public final class MarketingApp {
+
 
     private MarketingApp() {
     }
 
+
     public static void main(String[] args) {
 
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
-            GraphTemplate template = container.select(GraphTemplate.class).get();
+            GraphTemplate graph = container.select(GraphTemplate.class).get();
 
-            Person banner = template.insert(builder().withAge(48).withName("Bruce")
+            Person banner = graph.insert(Person.builder().withAge(30).withName("Banner")
                     .withOccupation("Developer").withSalary(3_000D).build());
 
-            Person natalia = template.insert(builder().withAge(32).withName("Natalia")
+            Person natalia = graph.insert(Person.builder().withAge(32).withName("Natalia")
                     .withOccupation("Developer").withSalary(5_000D).build());
 
-            Person rose = template.insert(builder().withAge(40).withName("Pepper")
+            Person rose = graph.insert(Person.builder().withAge(40).withName("Rose")
                     .withOccupation("Design").withSalary(1_000D).build());
 
-            Person tony = template.insert(builder().withAge(50).withName("Tony")
+            Person tony = graph.insert(Person.builder().withAge(22).withName("tony")
                     .withOccupation("Developer").withSalary(4_500D).build());
 
 
-            template.edge(tony, "knows", rose).add("feel", "love");
-            template.edge(tony, "knows", natalia);
+            graph.edge(tony, "knows", rose).add("feel", "love");
+            graph.edge(tony, "knows", natalia);
 
-            template.edge(natalia, "knows", rose);
-            template.edge(banner, "knows", rose);
+            graph.edge(natalia, "knows", rose);
+            graph.edge(banner, "knows", rose);
 
-            List<Person> developers = template.getTraversalVertex()
+            List<Person> developers = graph.getTraversalVertex()
                     .has("salary", gte(3_000D))
-                    .has("age", between(30, 55))
+                    .has("age", between(20, 25))
                     .has("occupation", "Developer")
                     .<Person>getResult().collect(toList());
 
-            List<Person> peopleWhoDeveloperKnows = template.getTraversalVertex()
+            List<Person> peopleWhoDeveloperKnows = graph.getTraversalVertex()
                     .has("salary", gte(3_000D))
-                    .has("age", between(30, 45))
+                    .has("age", between(20, 25))
                     .has("occupation", "Developer")
                     .out("knows")
                     .<Person>getResult().collect(toList());
 
-            List<Person> both = template.getTraversalVertex()
+            List<Person> both = graph.getTraversalVertex()
                     .has("salary", gte(3_000D))
-                    .has("age", between(40, 55))
+                    .has("age", between(20, 25))
                     .has("occupation", "Developer")
                     .outE("knows")
                     .bothV()
@@ -79,9 +80,9 @@ public final class MarketingApp {
                     .distinct()
                     .collect(toList());
 
-            List<Person> couple = template.getTraversalVertex()
+            List<Person> couple = graph.getTraversalVertex()
                     .has("salary", gte(3_000D))
-                    .has("age", between(40, 55))
+                    .has("age", between(20, 25))
                     .has("occupation", "Developer")
                     .outE("knows")
                     .has("feel", "love")
@@ -90,10 +91,13 @@ public final class MarketingApp {
                     .distinct()
                     .collect(toList());
 
-            System.out.println("Developers has salary greater than 3000 and age between 30 and 55: " + developers);
+            System.out.println("Developers has salary greater than 3000 and age between 20 and 25: " + developers);
             System.out.println("Person who the Developers target know: " + peopleWhoDeveloperKnows);
             System.out.println("The person and the developers target: " + both);
             System.out.println("Developers to Valentine days: " + couple);
+
         }
     }
+
 }
+

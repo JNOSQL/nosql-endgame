@@ -6,7 +6,7 @@
 
     <groupId>org.jnosql.demo.endgame</groupId>
     <artifactId>spring</artifactId>	
-    <name>spring-nosql-demo</name>
+    <name>Spring NoSQL Demos</name>
     <url>http://www.jnosql.org</url>
 	<packaging>pom</packaging>
 

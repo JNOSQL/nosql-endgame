@@ -18,7 +18,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jnosql.demo.endgame</groupId>
-	<artifactId>jakarta-nosql-demos</artifactId>
+	<artifactId>jakarta</artifactId>
     <packaging>pom</packaging>
     <name>Jakarta NoSQL Demos</name>
     <parent>
@@ -72,9 +72,10 @@
     </dependencies>
 
     <modules>
+    	<module>graph-janus</module>
         <module>graph-neo4j</module>
-        <!-- module>mongodb</module>
-        <module>combined</module -->
+        <module>mongodb</module>
+        <!-- >module>combined</module -->
     </modules>
 
     <repositories>

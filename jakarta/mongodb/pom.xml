@@ -11,14 +11,13 @@
   ~ Contributors:
   ~
   ~ Otavio Santana
-  ~ Werner Keil
   -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>jakarta-neo4j</artifactId>
-    <name>Jakarta NoSQL Demo using Java SE Graph-Neo4J</name>
+    <artifactId>jakarta-mongodb</artifactId>
+    <name>Jakarta NoSQL Demo using Java SE MongoDB</name>
 
     <parent>
 	    <groupId>org.jnosql.demo.endgame</groupId>
@@ -28,48 +27,23 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <tinkerpop.version>3.4.3</tinkerpop.version>
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>org.eclipse.jnosql.artemis</groupId>
-            <artifactId>artemis-graph</artifactId>
+            <artifactId>artemis-document</artifactId>
             <version>${jnosql.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.tinkerpop</groupId>
-            <artifactId>neo4j-gremlin</artifactId>
-            <version>${tinkerpop.version}</version>
+            <groupId>org.eclipse.jnosql.diana</groupId>
+            <artifactId>mongodb-driver</artifactId>
+            <version>${jnosql.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.tinkerpop</groupId>
-            <artifactId>gremlin-core</artifactId>
-            <version>${tinkerpop.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tinkerpop</groupId>
-            <artifactId>gremlin-groovy</artifactId>
-            <version>${tinkerpop.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tinkerpop</groupId>
-            <artifactId>neo4j-gremlin</artifactId>
-            <version>3.4.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-tinkerpop-api-impl</artifactId>
-            <version>0.9-3.4.0</version>
+            <groupId>io.smallrye.config</groupId>
+            <artifactId>smallrye-config</artifactId>
+            <version>1.7.0</version>
         </dependency>
     </dependencies>
-
-    <repositories>
-        <repository>
-            <id>sonatype.snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </repository>
-    </repositories>
-
 </project>

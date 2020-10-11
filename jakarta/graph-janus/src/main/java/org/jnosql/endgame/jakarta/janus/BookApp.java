@@ -12,7 +12,7 @@
  *
  * Otavio Santana
  */
-package org.jnosql.demo.endgame.jakarta.neo4j;
+package org.jnosql.endgame.jakarta.janus;
 
 import org.eclipse.jnosql.artemis.graph.GraphTemplate;
 
@@ -22,16 +22,15 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
-public final class BookTraveresalApp {
+public final class BookApp {
 
-    private BookTraveresalApp() {
+    private BookApp() {
     }
 
     public static void main(String[] args) {
 
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
-            GraphTemplateTraversalSupplier graphService = container.select(GraphTemplateTraversalSupplier.class).get();
-            GraphTemplate graph = graphService.get();
+            GraphTemplate graph = container.select(GraphTemplate.class).get();
 
             Category software = graph.insert(Category.of("Software"));
             Category romance = graph.insert(Category.of("Romance"));
@@ -61,6 +60,7 @@ public final class BookTraveresalApp {
 
             graph.edge(shack, "is", romance);
 
+
             List<String> softwareCategories = graph.getTraversalVertex().hasLabel("Category")
                     .has("name", "Software")
                     .in("is").hasLabel("Category").<Category>getResult()
@@ -81,9 +81,12 @@ public final class BookTraveresalApp {
                     .map(Book::getName)
                     .collect(toList());
 
+
             System.out.println("The software categories: " + softwareCategories);
             System.out.println("The software books: " + softwareBooks);
             System.out.println("The software and NoSQL books: " + sofwareNoSQLBooks);
+
+
         }
     }
 }

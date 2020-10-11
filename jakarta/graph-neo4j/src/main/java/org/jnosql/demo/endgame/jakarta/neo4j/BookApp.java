@@ -31,7 +31,6 @@ public final class BookApp {
 
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
             GraphTemplate graph = container.select(GraphTemplate.class).get();
-            BookRepository repository = container.select(BookRepository.class).get();
 
             Category software = graph.insert(Category.of("Software"));
             Category romance = graph.insert(Category.of("Romance"));
