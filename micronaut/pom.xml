@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.jnosql.demo.endgame</groupId>
+    <artifactId>micronaut</artifactId>	
+    <name>Micronaut NoSQL Demos</name>
+    <url>http://www.jnosql.org</url>
+	<packaging>pom</packaging>
+
+    <modules>
+        <module>micronaut-mongodb-animals</module>
+        <module>micronaut-neo4j-example</module>
+    </modules>
+    <parent>
+    	<groupId>org.jnosql.demo</groupId>
+    	<artifactId>endgame-parent</artifactId>
+    	<version>0.1-SNAPSHOT</version>
+    </parent>
+</project>
