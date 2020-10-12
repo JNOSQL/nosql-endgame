@@ -1,4 +1,4 @@
-package micronaut.neo4j.example;
+package neo4japp;
 
 import io.micronaut.runtime.Micronaut;
 

@@ -1,0 +1,10 @@
+---
+micronaut:
+    application:
+        name: neo4japp
+
+---
+neo4j:
+  uri: bolt://${NEO4J_HOST:localhost}
+  username: neo4j
+  password: secret

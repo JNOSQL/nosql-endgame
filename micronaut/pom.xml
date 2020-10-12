@@ -12,7 +12,7 @@
 
     <modules>
         <module>micronaut-mongodb-animals</module>
-        <module>micronaut-neo4j-example</module>
+        <module>micronaut-neo4j</module>
     </modules>
     <parent>
     	<groupId>org.jnosql.demo</groupId>
