@@ -1,4 +1,4 @@
 FROM openjdk:8u171-alpine3.7
 RUN apk --no-cache add curl
-COPY target/neo4japp*.jar neo4japp.jar
-CMD java ${JAVA_OPTS} -jar neo4japp.jar
+COPY target/org.jnosql.demo.micronaut.neo4j*.jar org.jnosql.demo.micronaut.neo4j.jar
+CMD java ${JAVA_OPTS} -jar org.jnosql.demo.micronaut.neo4j.jar

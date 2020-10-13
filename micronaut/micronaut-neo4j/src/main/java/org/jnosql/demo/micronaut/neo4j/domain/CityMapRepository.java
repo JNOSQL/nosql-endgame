@@ -1,4 +1,4 @@
-package neo4japp.domain;
+package org.jnosql.demo.micronaut.neo4j.domain;
 
 import javax.inject.Singleton;
 import java.util.*;
@@ -15,4 +15,21 @@ public class CityMapRepository implements CityRepository {
    public Stream<City> findByName(String name) {
       return data.values().stream().filter(c -> c.name.contains(name));
    }
+   
+   public int delete(City c) {
+	   //TODO make this nicer with lambda
+	   int i = 0;
+	   for (City city : data.values())  {
+		   if (c.name.equals(city.name)) {
+			   City removed = data.remove(city);
+			   if (removed != null) i++;				   
+		   }	   
+	   }
+	   return i;
+   }
+   
+	@Override
+	public long countAll() {
+		return data.size();
+	}
 }

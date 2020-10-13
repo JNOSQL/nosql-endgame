@@ -1,7 +1,7 @@
 ---
 micronaut:
     application:
-        name: neo4japp
+        name: org.jnosql.demo.micronaut.neo4j
 
 ---
 neo4j:

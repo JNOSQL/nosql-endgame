@@ -1,5 +1,5 @@
 profile: service
-defaultPackage: neo4japp
+defaultPackage: org.jnosql.demo.micronaut.neo4j
 ---
 testFramework: junit
 sourceLanguage: java

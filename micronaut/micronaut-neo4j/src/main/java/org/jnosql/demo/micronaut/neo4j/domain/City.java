@@ -1,4 +1,4 @@
-package neo4japp.domain;
+package org.jnosql.demo.micronaut.neo4j.domain;
 
 import java.util.*;
 

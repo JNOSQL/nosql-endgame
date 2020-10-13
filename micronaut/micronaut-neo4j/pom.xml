@@ -7,7 +7,7 @@
     <micronaut.version>1.0.4</micronaut.version>
     <jdk.version>11</jdk.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <exec.mainClass>neo4japp.Application</exec.mainClass>
+    <exec.mainClass>org.jnosql.demo.micronaut.neo4j.CityApplication</exec.mainClass>
   </properties>
   <repositories>
     <repository>
