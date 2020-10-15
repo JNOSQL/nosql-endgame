@@ -11,10 +11,13 @@
  * Contributors:
  *
  * Otavio Santana
+ * Werner Keil
  */
 package org.jnosql.demo.endgame.jakarta.neo4j;
 
 import org.eclipse.jnosql.artemis.graph.GraphTemplate;
+import org.jnosql.demo.endgame.jakarta.neo4j.model.City;
+import org.jnosql.demo.endgame.jakarta.neo4j.model.Traveler;
 
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
@@ -39,83 +42,82 @@ public final class TravelApp {
     public static void main(String[] args) {
 
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
-            GraphTemplate graph = container.select(GraphTemplate.class).get();
+            GraphTemplate template = container.select(GraphTemplate.class).get();
 
-            Traveler stark = graph.insert(Traveler.of("Stark"));
-            Traveler roges = graph.insert(Traveler.of("Rogers"));
-            Traveler romanoff = graph.insert(Traveler.of("Romanoff"));
-            Traveler banners = graph.insert(Traveler.of("Banners"));
+            Traveler stark = template.insert(Traveler.of("Stark"));
+            Traveler rogers = template.insert(Traveler.of("Rogers"));
+            Traveler romanoff = template.insert(Traveler.of("Romanoff"));
+            Traveler banner = template.insert(Traveler.of("Banner"));
 
-            City sanFrancisco = graph.insert(City.of("San Francisco"));
-            City moscow = graph.insert(City.of("Moscow"));
-            City newYork = graph.insert(City.of("New York"));
-            City saoPaulo = graph.insert(City.of("São Paulo"));
-            City casaBlanca = graph.insert(City.of("Casa Blanca"));
+            City sanFrancisco = template.insert(City.of("San Francisco"));
+            City moscow = template.insert(City.of("Moscow"));
+            City newYork = template.insert(City.of("New York"));
+            City saoPaulo = template.insert(City.of("São Paulo"));
+            City casaBlanca = template.insert(City.of("Casa Blanca"));
 
-            graph.edge(stark, TRAVELS, sanFrancisco).add(GOAL, FUN);
-            graph.edge(stark, TRAVELS, moscow).add(GOAL, FUN);
-            graph.edge(stark, TRAVELS, newYork).add(GOAL, FUN);
-            graph.edge(stark, TRAVELS, saoPaulo).add(GOAL, FUN);
-            graph.edge(stark, TRAVELS, casaBlanca).add(GOAL, FUN);
+            template.edge(stark, TRAVELS, sanFrancisco).add(GOAL, FUN);
+            template.edge(stark, TRAVELS, moscow).add(GOAL, FUN);
+            template.edge(stark, TRAVELS, newYork).add(GOAL, FUN);
+            template.edge(stark, TRAVELS, saoPaulo).add(GOAL, FUN);
+            template.edge(stark, TRAVELS, casaBlanca).add(GOAL, FUN);
 
-            graph.edge(roges, TRAVELS, newYork).add(GOAL, WORK);
+            template.edge(rogers, TRAVELS, newYork).add(GOAL, WORK);
 
-            graph.edge(banners, TRAVELS, casaBlanca).add(GOAL, WORK);
-            graph.edge(banners, TRAVELS, saoPaulo).add(GOAL, WORK);
+            template.edge(banner, TRAVELS, casaBlanca).add(GOAL, WORK);
+            template.edge(banner, TRAVELS, saoPaulo).add(GOAL, WORK);
 
-            graph.edge(romanoff, TRAVELS, moscow).add(GOAL, WORK);
-            graph.edge(romanoff, TRAVELS, newYork).add(GOAL, WORK);
-            graph.edge(romanoff, TRAVELS, saoPaulo).add(GOAL, WORK);
-            graph.edge(romanoff, TRAVELS, casaBlanca).add(GOAL, FUN);
+            template.edge(romanoff, TRAVELS, moscow).add(GOAL, WORK);
+            template.edge(romanoff, TRAVELS, newYork).add(GOAL, WORK);
+            template.edge(romanoff, TRAVELS, saoPaulo).add(GOAL, WORK);
+            template.edge(romanoff, TRAVELS, casaBlanca).add(GOAL, FUN);
 
-            graph.edge(stark, "knows", romanoff);
-            graph.edge(stark, "knows", roges);
-            graph.edge(roges, "knows", romanoff);
+            template.edge(stark, "knows", romanoff);
+            template.edge(stark, "knows", rogers);
+            template.edge(rogers, "knows", romanoff);
 
 
-
-            Map<String, Long> mostFunCity = graph.getTraversalVertex()
+            Map<String, Long> mostFunCity = template.getTraversalVertex()
                     .inE(TRAVELS)
                     .has(GOAL, FUN).inV()
                     .<City>getResult()
                     .map(City::getName)
                     .collect((groupingBy(Function.identity(), counting())));
 
-            Map<String, Long> mostBusiness = graph.getTraversalVertex()
+            Map<String, Long> mostBusiness = template.getTraversalVertex()
                     .inE(TRAVELS)
                     .has(GOAL, WORK).inV()
                     .<City>getResult()
                     .map(City::getName)
                     .collect((groupingBy(Function.identity(), counting())));
 
-            Map<String, Long> mostTravelCity = graph.getTraversalVertex()
+            Map<String, Long> mostTravelCity = template.getTraversalVertex()
                     .out(TRAVELS)
                     .<City>getResult()
                     .map(City::getName)
                     .collect((groupingBy(Function.identity(), counting())));
 
 
-            Map<String, Long> personTravelFun = graph.getTraversalVertex()
+            Map<String, Long> personTravelFun = template.getTraversalVertex()
                     .inE(TRAVELS)
                     .has(GOAL, FUN).outV()
                     .<Traveler>getResult()
                     .map(Traveler::getName)
                     .collect((groupingBy(Function.identity(), counting())));
 
-            Map<String, Long> personTravelWork = graph.getTraversalVertex()
+            Map<String, Long> personTravelWork = template.getTraversalVertex()
                     .inE(TRAVELS)
                     .has(GOAL, WORK).outV()
                     .<Traveler>getResult()
                     .map(Traveler::getName)
                     .collect((groupingBy(Function.identity(), counting())));
 
-            Map<String, Long> personTravel = graph.getTraversalVertex()
+            Map<String, Long> personTravel = template.getTraversalVertex()
                     .in(TRAVELS)
                     .<Traveler>getResult()
                     .map(Traveler::getName)
                     .collect((groupingBy(Function.identity(), counting())));
 
-            List<String> friendsCasaBlanca = graph.getTraversalVertex()
+            List<String> friendsCasaBlanca = template.getTraversalVertex()
                     .hasLabel("City")
                     .has("name", "Casa Blanca")
                     .in(TRAVELS).<Traveler>getResult().map(Traveler::getName).collect(toList());
@@ -128,11 +130,7 @@ public final class TravelApp {
             System.out.println("The person who traveled business: "+ personTravelWork);
             System.out.println("The person who traveled: "+ personTravel);
 
-
             System.out.println("Friends because went to Casa Blanca: " + casaBlanca);
-
-
-
         }
     }
 }

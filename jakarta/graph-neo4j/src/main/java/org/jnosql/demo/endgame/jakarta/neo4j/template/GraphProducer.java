@@ -12,7 +12,7 @@
  *
  *   Otavio Santana
  */
-package org.jnosql.demo.endgame.jakarta.neo4j;
+package org.jnosql.demo.endgame.jakarta.neo4j.template;
 
 import org.apache.tinkerpop.gremlin.neo4j.structure.Neo4jGraph;
 import org.apache.tinkerpop.gremlin.structure.Graph;

@@ -18,22 +18,23 @@ package org.jnosql.demo.endgame.jakarta.neo4j;
 
 
 import org.eclipse.jnosql.artemis.DatabaseQualifier;
+import org.jnosql.demo.endgame.jakarta.neo4j.model.Person;
+import org.jnosql.demo.endgame.jakarta.neo4j.repository.PersonRepository;
 
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
 
-public final class MarketingApp2 {
+public final class HRSRepositoryApp {
 
-    private MarketingApp2() {
+    private HRSRepositoryApp() {
     }
 
-    @SuppressWarnings("unused")
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
             PersonRepository repository = container.select(PersonRepository.class, DatabaseQualifier.ofGraph()).get();
 
-            Person banner = repository.save(Person.builder().withAge(48).withName("Bruce")
+            Person bruce = repository.save(Person.builder().withAge(48).withName("Bruce")
                     .withOccupation("Developer").withSalary(3_000D).build());
 
             Person natalia = repository.save(Person.builder().withAge(32).withName("Natalia")
@@ -52,6 +53,14 @@ public final class MarketingApp2 {
             System.out.println("findByAgeBetween");
             repository.findByAgeBetween(30, 50)
                     .forEach(System.out::println);
+            
+            // Cleanup
+            repository.deleteById(bruce.getId());
+            repository.deleteById(natalia.getId());
+            repository.deleteById(pepper.getId());
+            repository.deleteById(tony.getId());
+            
+            //System.out.println(repository.count());
         }
     }
 }

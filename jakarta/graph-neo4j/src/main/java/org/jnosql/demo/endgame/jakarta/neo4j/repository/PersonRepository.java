@@ -12,11 +12,13 @@
  *
  * Otavio Santana
  */
-package org.jnosql.demo.endgame.jakarta.neo4j;
+package org.jnosql.demo.endgame.jakarta.neo4j.repository;
 
 import jakarta.nosql.mapping.Repository;
 
 import java.util.stream.Stream;
+
+import org.jnosql.demo.endgame.jakarta.neo4j.model.Person;
 
 public interface PersonRepository extends Repository<Person, Long> {
 

@@ -12,7 +12,7 @@
  *
  * Otavio Santana
  */
-package org.jnosql.demo.endgame.jakarta.neo4j;
+package org.jnosql.demo.endgame.jakarta.neo4j.model;
 
 import jakarta.nosql.mapping.Column;
 import jakarta.nosql.mapping.Entity;

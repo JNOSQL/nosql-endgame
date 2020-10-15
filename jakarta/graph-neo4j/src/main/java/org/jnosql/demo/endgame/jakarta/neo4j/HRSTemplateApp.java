@@ -17,6 +17,7 @@
 package org.jnosql.demo.endgame.jakarta.neo4j;
 
 import org.eclipse.jnosql.artemis.graph.GraphTemplate;
+import org.jnosql.demo.endgame.jakarta.neo4j.model.Person;
 
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
@@ -25,11 +26,11 @@ import java.util.List;
 import static java.util.stream.Collectors.toList;
 import static org.apache.tinkerpop.gremlin.process.traversal.P.between;
 import static org.apache.tinkerpop.gremlin.process.traversal.P.gte;
-import static org.jnosql.demo.endgame.jakarta.neo4j.Person.builder;
+import static org.jnosql.demo.endgame.jakarta.neo4j.model.Person.builder;
 
-public final class MarketingApp {
+public final class HRSTemplateApp {
 
-    private MarketingApp() {
+    private HRSTemplateApp() {
     }
 
     public static void main(String[] args) {
@@ -37,24 +38,24 @@ public final class MarketingApp {
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
             GraphTemplate template = container.select(GraphTemplate.class).get();
 
-            Person banner = template.insert(builder().withAge(48).withName("Bruce")
+            Person bruce = template.insert(builder().withAge(48).withName("Bruce")
                     .withOccupation("Developer").withSalary(3_000D).build());
 
             Person natalia = template.insert(builder().withAge(32).withName("Natalia")
                     .withOccupation("Developer").withSalary(5_000D).build());
 
-            Person rose = template.insert(builder().withAge(40).withName("Pepper")
+            Person pepper = template.insert(builder().withAge(40).withName("Pepper")
                     .withOccupation("Design").withSalary(1_000D).build());
 
             Person tony = template.insert(builder().withAge(50).withName("Tony")
                     .withOccupation("Developer").withSalary(4_500D).build());
 
 
-            template.edge(tony, "knows", rose).add("feel", "love");
+            template.edge(tony, "knows", pepper).add("feel", "love");
             template.edge(tony, "knows", natalia);
 
-            template.edge(natalia, "knows", rose);
-            template.edge(banner, "knows", rose);
+            template.edge(natalia, "knows", pepper);
+            template.edge(bruce, "knows", pepper);
 
             List<Person> developers = template.getTraversalVertex()
                     .has("salary", gte(3_000D))
@@ -93,7 +94,15 @@ public final class MarketingApp {
             System.out.println("Developers has salary greater than 3000 and age between 30 and 55: " + developers);
             System.out.println("Person who the Developers target know: " + peopleWhoDeveloperKnows);
             System.out.println("The person and the developers target: " + both);
-            System.out.println("Developers to Valentine days: " + couple);
+            System.out.println("Developers for Valentine's day: " + couple);
+            
+            template.deleteEdge(both);
+            template.deleteEdge(couple);
+            
+//            template.delete(bruce);
+//            template.delete(tony);
+//            template.delete(pepper);
+//            template.delete(natalia);         
         }
     }
 }

@@ -12,7 +12,7 @@
  *
  * Otavio Santana
  */
-package org.jnosql.demo.endgame.jakarta.neo4j;
+package org.jnosql.demo.endgame.jakarta.neo4j.model;
 
 import jakarta.nosql.mapping.Column;
 import jakarta.nosql.mapping.Entity;
@@ -21,7 +21,7 @@ import jakarta.nosql.mapping.Id;
 import java.util.Objects;
 
 @Entity
-public class Traveler {
+public class Book {
 
 
     @Id
@@ -31,10 +31,10 @@ public class Traveler {
     private String name;
 
 
-    Traveler() {
+    Book() {
     }
 
-    private Traveler(String name) {
+    private Book(String name) {
         this.name = name;
     }
 
@@ -53,10 +53,10 @@ public class Traveler {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof Traveler)) {
+        if (!(o instanceof Book)) {
             return false;
         }
-        Traveler traveler = (Traveler) o;
+        Book traveler = (Book) o;
         return Objects.equals(id, traveler.id);
     }
 
@@ -74,7 +74,7 @@ public class Traveler {
         return sb.toString();
     }
 
-    public static Traveler of(String name) {
-        return new Traveler(name);
+    public static Book of(String name) {
+        return new Book(name);
     }
 }

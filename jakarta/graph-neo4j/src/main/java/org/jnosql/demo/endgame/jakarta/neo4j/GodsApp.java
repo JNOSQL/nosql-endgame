@@ -15,6 +15,7 @@
 package org.jnosql.demo.endgame.jakarta.neo4j;
 
 import org.eclipse.jnosql.artemis.graph.GraphTemplate;
+import org.jnosql.demo.endgame.jakarta.neo4j.model.God;
 
 import java.util.Optional;
 
