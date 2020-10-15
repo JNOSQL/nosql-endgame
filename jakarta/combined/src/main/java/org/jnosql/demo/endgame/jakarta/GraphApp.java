@@ -23,7 +23,7 @@ public class GraphApp {
                     .has("name", "Ullr")
                     .<God>next()
                     .orElseGet(() ->
-                            template.insert(new God(null, "Ullr", "Hunt")));
+                            template.insert(new God(null, "Ullr", "Hunting")));
 
 
             System.out.println("query : " + hunter);

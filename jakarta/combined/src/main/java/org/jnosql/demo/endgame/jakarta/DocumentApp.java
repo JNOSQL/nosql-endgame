@@ -16,7 +16,7 @@ public class DocumentApp {
         try (SeContainer container = SeContainerInitializer
                 .newInstance().initialize()) {
 
-            God hunter = new God(1L, "Ullr", "Hunt");
+            God hunter = new God(1L, "Ullr", "Hunting");
 
             DocumentTemplate template =  container.select(DocumentTemplate.class)
                             .get();

@@ -26,7 +26,7 @@ import org.jnosql.demo.endgame.jakarta.mongodb.model.Attachment;
 import java.util.Optional;
 import java.util.UUID;
 
-public class App4 {
+public class FilesApp {
 
     public static void main(String[] args) {
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
@@ -51,7 +51,7 @@ public class App4 {
     }
 
 
-    private App4() {
+    private FilesApp() {
     }
 
 }

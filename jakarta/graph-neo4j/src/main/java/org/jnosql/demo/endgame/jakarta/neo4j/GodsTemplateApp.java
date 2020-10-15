@@ -22,7 +22,7 @@ import java.util.Optional;
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
 
-public class GodsApp {
+public class GodsTemplateApp {
 
     public static void main(String[] args) {
 
@@ -38,7 +38,7 @@ public class GodsApp {
                     .has("name", "Ullr")
                     .<God>next()
                     .orElseGet(() ->
-                            template.insert(new God(null, "Ullr", "Hunt")));
+                            template.insert(new God(null, "Ullr", "Hunting")));
 
             God magni = template.getTraversalVertex()
                     .hasLabel(God.class)

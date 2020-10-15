@@ -14,7 +14,7 @@
  */
 package org.jnosql.demo.endgame.jakarta.mongodb;
 
-import jakarta.nosql.mapping.PreparedStatement;
+import jakarta.nosql.document.DocumentDeleteQuery;
 import jakarta.nosql.mapping.document.DocumentTemplate;
 
 import javax.enterprise.inject.se.SeContainer;
@@ -24,31 +24,31 @@ import org.jnosql.demo.endgame.jakarta.mongodb.model.God;
 
 import java.util.Optional;
 
-public class DocumentApp2 {
+import static jakarta.nosql.document.DocumentDeleteQuery.delete;
+
+public class GodsTemplateApp {
 
     public static void main(String[] args) {
 
         try (SeContainer container = SeContainerInitializer
                 .newInstance().initialize()) {
 
-            God hunter = new God(1L, "Ullr", "Hunt");
+            God hunter = new God(1L, "Ullr", "Hunting");
 
-            DocumentTemplate template =  container.select(DocumentTemplate.class).get();
+            DocumentTemplate template =  container.select(DocumentTemplate.class)
+                            .get();
 
             template.insert(hunter);
+            final Optional<God> god = template.find(God.class, 1L);
+            System.out.println("query : " + god);
 
-            Optional<God> god = template.singleResult("select * from God where _id = 1");
-            System.out.println("Plain query text : " + god);
+            DocumentDeleteQuery deleteQuery = delete().from("God")
+                    .where("_id").eq(1L).build();
 
-            PreparedStatement prepare = template.prepare("select * from God where _id = @id");
-            prepare.bind("id", 1L);
+            template.delete(deleteQuery);
 
-            System.out.println("Query by prepare query" + prepare.getSingleResult());
-
-
-            template.query("delete from God where _id = 1");
-
-            System.out.println("query : " + template.find(God.class, 1L));
+            System.out.println("query again: " +
+                    template.find(God.class, 1L));
         }
 
         System.exit(0);

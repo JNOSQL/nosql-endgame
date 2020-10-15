@@ -22,14 +22,14 @@ import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
 import java.util.Optional;
 
-public class DocumentApp3 {
+public class GodsRepoApp {
 
     public static void main(String[] args) {
 
         try (SeContainer container = SeContainerInitializer
                 .newInstance().initialize()) {
 
-            God hunter = new God(1L, "Ullr", "Hunt");
+            God hunter = new God(1L, "Ullr", "Hunting");
 
             GodRepository repository =
                     container.select(GodRepository.class, DatabaseQualifier.ofDocument())

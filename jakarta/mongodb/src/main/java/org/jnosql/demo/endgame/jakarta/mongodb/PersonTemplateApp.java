@@ -16,43 +16,53 @@
 package org.jnosql.demo.endgame.jakarta.mongodb;
 
 
-import org.eclipse.jnosql.artemis.DatabaseQualifier;
-import org.jnosql.demo.endgame.jakarta.mongodb.model.Person;
-import org.jnosql.demo.endgame.jakarta.mongodb.repository.PersonRepository;
+import jakarta.nosql.mapping.document.DocumentTemplate;
+import jakarta.nosql.document.DocumentQuery;
 
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
+
+import org.jnosql.demo.endgame.jakarta.mongodb.model.Address;
+import org.jnosql.demo.endgame.jakarta.mongodb.model.Job;
+import org.jnosql.demo.endgame.jakarta.mongodb.model.Person;
+
 import java.util.Arrays;
-import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
-public class App2 {
+import static jakarta.nosql.document.DocumentQuery.select;
+
+public class PersonTemplateApp {
 
 
     public static void main(String[] args) {
 
         Random random = new Random();
         Long id = random.nextLong();
-
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
 
+            Address address = new Address("Av nove de julho", "São Paulo");
+            Job job = new Job(12.12, "Developer");
             Person person = Person.builder().
                     withPhones(Arrays.asList("234", "432"))
                     .withName("Name")
-                    .withId(id)
-                    .build();
+                    .withAddress(address)
+                    .withJob(job)
+                    .withId(id).build();
+            DocumentTemplate template = container.select(DocumentTemplate.class).get();
+            Person saved = template.insert(person);
+            System.out.println("Person saved" + saved);
 
-            PersonRepository repository = container.select(PersonRepository.class)
-                    .select(DatabaseQualifier.ofDocument()).get();
-            repository.save(person);
 
-            List<Person> people = repository.findByName("Name");
-            System.out.println("Entity found: " + people);
-            //repository.findByPhones("234").forEach(System.out::println);
+            DocumentQuery query = select().from("Person")
+                    .where("_id").eq(id).build();
+
+            Optional<Person> personOptional = template.singleResult(query);
+            System.out.println("Entity found: " + personOptional);
 
         }
     }
 
-    private App2() {
+    private PersonTemplateApp() {
     }
 }

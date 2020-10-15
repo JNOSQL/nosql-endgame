@@ -15,7 +15,7 @@ public class KeyValueApp2 {
         try (SeContainer container = SeContainerInitializer
                 .newInstance().initialize()) {
 
-            God hunter = new God(1L, "Ullr", "Hunt");
+            God hunter = new God(1L, "Ullr", "Hunting");
 
             KeyValueTemplate template =
                     container.select(KeyValueTemplate.class)

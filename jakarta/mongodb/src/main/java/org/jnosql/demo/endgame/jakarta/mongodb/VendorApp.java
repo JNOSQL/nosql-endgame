@@ -28,7 +28,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 
-public class App5 {
+public class VendorApp {
 
 
     public static void main(String[] args) {
@@ -54,6 +54,6 @@ public class App5 {
         }
     }
 
-    private App5() {
+    private VendorApp() {
     }
 }

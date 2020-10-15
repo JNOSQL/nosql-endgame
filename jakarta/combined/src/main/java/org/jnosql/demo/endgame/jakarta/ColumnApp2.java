@@ -15,7 +15,7 @@ public class ColumnApp2 {
         try (SeContainer container = SeContainerInitializer
                 .newInstance().initialize()) {
 
-            God hunter = new God(1L, "Ullr", "Hunt");
+            God hunter = new God(1L, "Ullr", "Hunting");
 
             ColumnTemplate template =
                     container.select(ColumnTemplate.class)

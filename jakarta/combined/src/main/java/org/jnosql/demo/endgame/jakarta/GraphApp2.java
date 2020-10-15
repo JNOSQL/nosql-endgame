@@ -22,7 +22,7 @@ public class GraphApp2 {
                     .has("name", "Ullr")
                     .<God>next()
                     .orElseGet(() ->
-                            template.insert(new God(null, "Ullr", "Hunt")));
+                            template.insert(new God(null, "Ullr", "Hunting")));
 
             God magni = template.getTraversalVertex()
                     .hasLabel(God.class)
