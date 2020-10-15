@@ -13,13 +13,15 @@
  * Otavio Santana
  */
 
-package org.jnosql.demo.endgame.jakarta.mongodb;
+package org.jnosql.demo.endgame.jakarta.mongodb.repository;
 
 
 import jakarta.nosql.mapping.Repository;
 
 import java.util.List;
 import java.util.stream.Stream;
+
+import org.jnosql.demo.endgame.jakarta.mongodb.model.Person;
 
 public interface PersonRepository extends Repository<Person, Long> {
 

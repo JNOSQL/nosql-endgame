@@ -21,6 +21,10 @@ import jakarta.nosql.document.DocumentQuery;
 
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
+
+import org.jnosql.demo.endgame.jakarta.mongodb.model.Address;
+import org.jnosql.demo.endgame.jakarta.mongodb.model.Person;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;

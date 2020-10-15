@@ -13,7 +13,7 @@
  * Otavio Santana
  */
 
-package org.jnosql.demo.endgame.jakarta.mongodb;
+package org.jnosql.demo.endgame.jakarta.mongodb.model;
 
 import jakarta.nosql.mapping.Column;
 import jakarta.nosql.mapping.Entity;

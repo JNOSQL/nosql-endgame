@@ -13,7 +13,7 @@
  * Otavio Santana
  */
 
-package org.jnosql.demo.endgame.jakarta.mongodb;
+package org.jnosql.demo.endgame.jakarta.mongodb.model;
 
 
 import jakarta.nosql.mapping.Column;
@@ -31,7 +31,7 @@ public class Address {
     private String city;
 
 
-    Address(String street, String city) {
+    public Address(String street, String city) {
         this.street = street;
         this.city = city;
     }

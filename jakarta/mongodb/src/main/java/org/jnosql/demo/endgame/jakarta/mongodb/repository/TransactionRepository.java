@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Werner Keil and others
+ * Copyright (c) 2020 Otávio Santana and others
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * and Apache License v2.0 which accompanies this distribution.
@@ -10,9 +10,9 @@
  *
  * Contributors:
  *
- * Werner Keil
+ * Otavio Santana
  */
-package org.jnosql.demo.endgame.jakarta.mongodb;
+package org.jnosql.demo.endgame.jakarta.mongodb.repository;
 
 import jakarta.nosql.mapping.Param;
 import jakarta.nosql.mapping.Query;
@@ -20,10 +20,10 @@ import jakarta.nosql.mapping.Repository;
 
 import java.util.List;
 
-public interface GodRepository extends Repository<God, Long> {
+import org.jnosql.demo.endgame.jakarta.mongodb.model.Transaction;
 
-    @Query("select * from God where name = @name")
-    List<God> query(@Param("name") String name);
+public interface TransactionRepository extends Repository<Transaction, String> {
 
-    List<God> findByName(String name);
+    @Query("select * from Transaction where currency.curencyName = @currencyName")
+    List<Transaction> findByQuery(@Param("currencyName") String currencyName);
 }

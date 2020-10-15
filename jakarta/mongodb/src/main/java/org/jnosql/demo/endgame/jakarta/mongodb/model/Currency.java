@@ -12,42 +12,31 @@
  *
  * Otavio Santana
  */
-package org.jnosql.demo.endgame.jakarta.mongodb;
+package org.jnosql.demo.endgame.jakarta.mongodb.model;
 
 import jakarta.nosql.mapping.Column;
 import jakarta.nosql.mapping.Entity;
-import jakarta.nosql.mapping.Id;
 
 @Entity
-public class Transaction {
-
-    @Id
-    private String txId;
-
+public class Currency {
     @Column
-    private Currency currency;
+    private String ticker;
+    @Column
+    private String curencyName;
 
-    public String getTxId() {
-        return txId;
+    public Currency(String ticker, String curencyName) {
+        this.ticker = ticker;
+        this.curencyName = curencyName;
     }
 
-    public Currency getCurrency() {
-        return currency;
-    }
-
-    public Transaction(String txId, Currency currency) {
-        this.txId = txId;
-        this.currency = currency;
-    }
-
-    public Transaction() {
+    Currency() {
     }
 
     @Override
     public String toString() {
-        return "Transaction{" +
-                "txId='" + txId + '\'' +
-                ", currency=" + currency +
+        return "Currency{" +
+                "ticker='" + ticker + '\'' +
+                ", curencyName='" + curencyName + '\'' +
                 '}';
     }
 }

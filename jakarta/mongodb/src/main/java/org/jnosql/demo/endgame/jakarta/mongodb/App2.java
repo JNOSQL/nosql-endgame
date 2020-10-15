@@ -17,6 +17,8 @@ package org.jnosql.demo.endgame.jakarta.mongodb;
 
 
 import org.eclipse.jnosql.artemis.DatabaseQualifier;
+import org.jnosql.demo.endgame.jakarta.mongodb.model.Person;
+import org.jnosql.demo.endgame.jakarta.mongodb.repository.PersonRepository;
 
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;

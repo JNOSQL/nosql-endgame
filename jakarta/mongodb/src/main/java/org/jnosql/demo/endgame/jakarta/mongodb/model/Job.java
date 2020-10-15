@@ -12,7 +12,7 @@
  *
  * Otavio Santana
  */
-package org.jnosql.demo.endgame.jakarta.mongodb;
+package org.jnosql.demo.endgame.jakarta.mongodb.model;
 
 import jakarta.nosql.mapping.Column;
 import jakarta.nosql.mapping.Embeddable;
@@ -27,12 +27,12 @@ public class Job {
     @Column
     private String ocupation;
 
-    Job(double salary, String ocupation) {
+    public Job(double salary, String ocupation) {
         this.salary = salary;
         this.ocupation = ocupation;
     }
 
-    public Job() {
+    Job() {
     }
 
     public double getSalary() {

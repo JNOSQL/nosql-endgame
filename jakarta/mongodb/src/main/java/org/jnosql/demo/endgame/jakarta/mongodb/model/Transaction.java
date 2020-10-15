@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Werner Keil and others
+ * Copyright (c) 2020 Otávio Santana and others
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * and Apache License v2.0 which accompanies this distribution.
@@ -10,45 +10,44 @@
  *
  * Contributors:
  *
- * Werner Keil
+ * Otavio Santana
  */
-package org.jnosql.demo.endgame.jakarta.mongodb;
+package org.jnosql.demo.endgame.jakarta.mongodb.model;
 
 import jakarta.nosql.mapping.Column;
 import jakarta.nosql.mapping.Entity;
 import jakarta.nosql.mapping.Id;
 
 @Entity
-public class God {
+public class Transaction {
 
     @Id
-    private Long id;
+    private String txId;
 
     @Column
-    private String name;
+    private Currency currency;
 
-    @Column
-    private String power;
-
-    public God(Long id, String name, String power) {
-        this.id = id;
-        this.name = name;
-        this.power = power;
+    public String getTxId() {
+        return txId;
     }
 
-    public God() {
+    public Currency getCurrency() {
+        return currency;
     }
 
-    public Long getId() {
-        return id;
+    public Transaction(String txId, Currency currency) {
+        this.txId = txId;
+        this.currency = currency;
+    }
+
+    public Transaction() {
     }
 
     @Override
     public String toString() {
-        return "God{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", power=" + power +
+        return "Transaction{" +
+                "txId='" + txId + '\'' +
+                ", currency=" + currency +
                 '}';
     }
 }

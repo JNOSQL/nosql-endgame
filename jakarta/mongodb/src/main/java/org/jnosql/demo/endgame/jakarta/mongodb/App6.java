@@ -20,6 +20,9 @@ import jakarta.nosql.mapping.document.DocumentTemplate;
 
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
+
+import org.jnosql.demo.endgame.jakarta.mongodb.model.User;
+
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Collections;

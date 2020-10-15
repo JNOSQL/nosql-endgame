@@ -19,6 +19,9 @@ import jakarta.nosql.mapping.document.DocumentTemplate;
 
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
+
+import org.jnosql.demo.endgame.jakarta.mongodb.model.God;
+
 import java.util.Optional;
 
 import static jakarta.nosql.document.DocumentDeleteQuery.delete;

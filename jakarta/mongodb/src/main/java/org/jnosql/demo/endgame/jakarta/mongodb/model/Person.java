@@ -13,7 +13,7 @@
  * Otavio Santana
  */
 
-package org.jnosql.demo.endgame.jakarta.mongodb;
+package org.jnosql.demo.endgame.jakarta.mongodb.model;
 
 
 import jakarta.nosql.mapping.Column;
@@ -55,7 +55,7 @@ public class Person {
     }
 
 
-    public Person() {
+    Person() {
     }
 
     Person(long id, String name, List<String> phones, Address address, Job job) {
