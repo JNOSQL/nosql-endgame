@@ -94,15 +94,7 @@ public final class HRSTemplateApp {
             System.out.println("Developers has salary greater than 3000 and age between 30 and 55: " + developers);
             System.out.println("Person who the Developers target know: " + peopleWhoDeveloperKnows);
             System.out.println("The person and the developers target: " + both);
-            System.out.println("Developers for Valentine's day: " + couple);
-            
-            template.deleteEdge(both);
-            template.deleteEdge(couple);
-            
-//            template.delete(bruce);
-//            template.delete(tony);
-//            template.delete(pepper);
-//            template.delete(natalia);         
+            System.out.println("Developers for Valentine's day: " + couple);     
         }
     }
 }
