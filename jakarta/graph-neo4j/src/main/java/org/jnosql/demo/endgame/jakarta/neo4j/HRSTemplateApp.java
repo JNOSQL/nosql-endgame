@@ -38,18 +38,35 @@ public final class HRSTemplateApp {
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
             GraphTemplate template = container.select(GraphTemplate.class).get();
 
-            Person bruce = template.insert(builder().withAge(48).withName("Bruce")
-                    .withOccupation("Developer").withSalary(3_000D).build());
+            Person bruce = template.getTraversalVertex()
+                    .hasLabel(Person.class)
+                    .has("name", "Bruce")
+                    .<Person>next()
+                    .orElseGet(() ->
+            				template.insert(builder().withAge(48).withName("Bruce")
+                    .withOccupation("Developer").withSalary(3_000D).build()));
 
-            Person natalia = template.insert(builder().withAge(32).withName("Natalia")
-                    .withOccupation("Developer").withSalary(5_000D).build());
+            Person natalia = template.getTraversalVertex()
+                    .hasLabel(Person.class)
+                    .has("name", "Natalia")
+                    .<Person>next()
+                    .orElseGet(() -> template.insert(builder().withAge(32).withName("Natalia")
+                    .withOccupation("Developer").withSalary(5_000D).build()));
 
-            Person pepper = template.insert(builder().withAge(40).withName("Pepper")
-                    .withOccupation("Design").withSalary(1_000D).build());
+            Person pepper = template.getTraversalVertex()
+                    .hasLabel(Person.class)
+                    .has("name", "Pepper")
+                    .<Person>next()
+                    .orElseGet(() -> template.insert(builder().withAge(40).withName("Pepper")
+                    .withOccupation("Design").withSalary(1_000D).build()));
 
-            Person tony = template.insert(builder().withAge(50).withName("Tony")
-                    .withOccupation("Developer").withSalary(4_500D).build());
-
+            Person tony = template.getTraversalVertex()
+                    .hasLabel(Person.class)
+                    .has("name", "Tony")
+                    .<Person>next()
+                    .orElseGet(() -> template.insert(builder().withAge(50).withName("Tony")
+                    .withOccupation("Developer").withSalary(4_500D).build()));
+            //template.
 
             template.edge(tony, "knows", pepper).add("feel", "love");
             template.edge(tony, "knows", natalia);

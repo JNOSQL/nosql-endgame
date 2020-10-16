@@ -65,6 +65,7 @@ public class GodsTemplateApp {
 
             System.out.println("Query: " + god);
             
+            // Cleaning up
             template.delete(ullr.getId());
             template.delete(thor.getId());
             template.delete(magni.getId());
