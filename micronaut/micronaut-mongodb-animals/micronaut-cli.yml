@@ -1,5 +1,0 @@
-profile: service
-defaultPackage: org.jnosql.demo.micronaut.mongodb.animals
----
-testFramework: junit
-sourceLanguage: java

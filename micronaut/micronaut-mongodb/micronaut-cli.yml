@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: org.jnosql.demo.micronaut.mongodb
+---
+testFramework: junit
+sourceLanguage: java

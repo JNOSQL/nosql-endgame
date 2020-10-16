@@ -11,7 +11,7 @@
 	<packaging>pom</packaging>
 
     <modules>
-        <module>micronaut-mongodb-animals</module>
+        <module>micronaut-mongodb</module>
         <module>micronaut-neo4j</module>
     </modules>
     <parent>

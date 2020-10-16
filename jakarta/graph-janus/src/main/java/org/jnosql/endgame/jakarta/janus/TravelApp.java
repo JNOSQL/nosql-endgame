@@ -15,6 +15,8 @@
 package org.jnosql.endgame.jakarta.janus;
 
 import org.eclipse.jnosql.artemis.graph.GraphTemplate;
+import org.jnosql.endgame.jakarta.janus.model.City;
+import org.jnosql.endgame.jakarta.janus.model.Traveler;
 
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;

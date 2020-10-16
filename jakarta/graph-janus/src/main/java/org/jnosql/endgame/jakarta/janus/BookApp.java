@@ -15,6 +15,8 @@
 package org.jnosql.endgame.jakarta.janus;
 
 import org.eclipse.jnosql.artemis.graph.GraphTemplate;
+import org.jnosql.endgame.jakarta.janus.model.Book;
+import org.jnosql.endgame.jakarta.janus.model.Category;
 
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
