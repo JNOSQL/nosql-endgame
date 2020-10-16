@@ -12,7 +12,7 @@
  *
  *   Otavio Santana
  */
-package org.jnosql.demo.endgame.jakarta.neo4j.template;
+package org.jnosql.demo.endgame.jakarta.neo4j.function;
 
 import org.eclipse.jnosql.artemis.graph.GraphTemplate;
 import org.eclipse.jnosql.artemis.graph.GraphTraversalSourceOperation;

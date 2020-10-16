@@ -13,7 +13,7 @@
  * Otavio Santana
  */
 
-package org.jnosql.demo.endgame.jakarta.mongodb.mapping;
+package org.jnosql.demo.endgame.jakarta.mongodb.function;
 
 
 import jakarta.nosql.document.DocumentCollectionManager;

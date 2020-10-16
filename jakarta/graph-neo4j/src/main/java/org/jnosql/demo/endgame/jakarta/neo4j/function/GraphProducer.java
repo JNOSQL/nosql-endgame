@@ -12,41 +12,40 @@
  *
  *   Otavio Santana
  */
-package org.jnosql.endgame.jakarta.janus.mapping;
+package org.jnosql.demo.endgame.jakarta.neo4j.function;
 
-import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource;
+import org.apache.tinkerpop.gremlin.neo4j.structure.Neo4jGraph;
 import org.apache.tinkerpop.gremlin.structure.Graph;
-import org.janusgraph.core.JanusGraph;
-import org.janusgraph.core.JanusGraphFactory;
-import org.janusgraph.example.GraphOfTheGodsFactory;
+import org.eclipse.jnosql.artemis.graph.GraphTraversalSourceSupplier;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
+import java.io.File;
 
 @ApplicationScoped
 public class GraphProducer {
-
-    private static final String FILE_CONF = "conf/janusgraph-berkeleyje-lucene.properties";
 
     private Graph graph;
 
 
     @PostConstruct
     public void init() {
-        JanusGraph janusGraph = JanusGraphFactory.open(FILE_CONF);
-        GraphTraversalSource g = janusGraph.traversal();
-        if (g.V().count().next() == 0) {
-            GraphOfTheGodsFactory.load(janusGraph);
-        }
-        this.graph = janusGraph;
+        String absolutePath = new File("").getAbsolutePath() + "/target/jnosql/";
+        this.graph = Neo4jGraph.open(absolutePath);
     }
 
     @Produces
     @ApplicationScoped
     public Graph getGraph() {
         return graph;
+    }
+
+    @Produces
+    @ApplicationScoped
+    public GraphTraversalSourceSupplier getSupplier() {
+        return () -> graph.traversal();
     }
 
     public void close(@Disposes Graph graph) throws Exception {

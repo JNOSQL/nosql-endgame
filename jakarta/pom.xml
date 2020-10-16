@@ -74,6 +74,7 @@
     <modules>
     	<module>graph-janus</module>
         <module>graph-neo4j</module>
+        <module>graph-neo4j-standalone</module>
         <module>mongodb</module>
         <!-- >module>combined</module -->
     </modules>

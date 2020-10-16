@@ -13,7 +13,7 @@
  * Otavio Santana
  */
 
-package org.jnosql.demo.endgame.jakarta.mongodb.mapping;
+package org.jnosql.demo.endgame.jakarta.mongodb.repository;
 
 
 import jakarta.nosql.mapping.EntityPostPersit;
