@@ -9,8 +9,6 @@ Neo4j is a graph database management system developed by  Neo4j, Inc. Described 
 
 ## Run the code
 
-### Gods
-
 ### HR Solution
 
 The HR solution that allows to match some rules based on the relationship between four people.
@@ -19,7 +17,13 @@ The HR solution that allows to match some rules based on the relationship betwee
 
 ### TravelApp
 
-Given cities and travelers, this TravelApp will return the most famous city, the person who most travel and also some
+Given cities and travelers, this travel application will return the most famous city, the person who most travel and also some
  friends suggestion placed by the visited cities.
 
 ![Travel](Travel.png)
+
+### Gods of Asgard
+
+This application shows the powers and relationships between gods of [Asgard](https://en.wikipedia.org/wiki/Asgard).
+
+![Gods](Gods.png)
