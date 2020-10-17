@@ -44,32 +44,49 @@ public final class TravelApp {
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
             GraphTemplate template = container.select(GraphTemplate.class).get();
 
-            Traveler stark = template.insert(Traveler.of("Stark"));
-            Traveler rogers = template.insert(Traveler.of("Rogers"));
-            Traveler romanoff = template.insert(Traveler.of("Romanoff"));
-            Traveler banner = template.insert(Traveler.of("Banner"));
+            Traveler stark = 
+                    template.getTraversalVertex()
+                    .hasLabel(Traveler.class)
+                    .has("name", "Stark")
+                    .<Traveler>next()
+                    .orElseGet(() -> template.insert(Traveler.of("Stark")));
+            Traveler rogers = template.getTraversalVertex()
+                    .hasLabel(Traveler.class)
+                    .has("name", "Rogers")
+                    .<Traveler>next()
+                    .orElseGet(() -> template.insert(Traveler.of("Rogers")));
+            Traveler romanoff = template.getTraversalVertex()
+                    .hasLabel(Traveler.class)
+                    .has("name", "Romanoff")
+                    .<Traveler>next()
+                    .orElseGet(() -> template.insert(Traveler.of("Romanoff")));
+            Traveler banner = template.getTraversalVertex()
+                    .hasLabel(Traveler.class)
+                    .has("name", "Banner")
+                    .<Traveler>next()
+                    .orElseGet(() -> template.insert(Traveler.of("Banner")));
 
             City sanFrancisco = template.insert(City.of("San Francisco"));
             City moscow = template.insert(City.of("Moscow"));
             City newYork = template.insert(City.of("New York"));
             City saoPaulo = template.insert(City.of("São Paulo"));
-            City casaBlanca = template.insert(City.of("Casa Blanca"));
+            City casablanca = template.insert(City.of("Casablanca"));
 
             template.edge(stark, TRAVELS, sanFrancisco).add(GOAL, FUN);
             template.edge(stark, TRAVELS, moscow).add(GOAL, FUN);
             template.edge(stark, TRAVELS, newYork).add(GOAL, FUN);
             template.edge(stark, TRAVELS, saoPaulo).add(GOAL, FUN);
-            template.edge(stark, TRAVELS, casaBlanca).add(GOAL, FUN);
+            template.edge(stark, TRAVELS, casablanca).add(GOAL, FUN);
 
             template.edge(rogers, TRAVELS, newYork).add(GOAL, WORK);
 
-            template.edge(banner, TRAVELS, casaBlanca).add(GOAL, WORK);
+            template.edge(banner, TRAVELS, casablanca).add(GOAL, WORK);
             template.edge(banner, TRAVELS, saoPaulo).add(GOAL, WORK);
 
             template.edge(romanoff, TRAVELS, moscow).add(GOAL, WORK);
             template.edge(romanoff, TRAVELS, newYork).add(GOAL, WORK);
             template.edge(romanoff, TRAVELS, saoPaulo).add(GOAL, WORK);
-            template.edge(romanoff, TRAVELS, casaBlanca).add(GOAL, FUN);
+            template.edge(romanoff, TRAVELS, casablanca).add(GOAL, FUN);
 
             template.edge(stark, "knows", romanoff);
             template.edge(stark, "knows", rogers);
@@ -117,9 +134,9 @@ public final class TravelApp {
                     .map(Traveler::getName)
                     .collect((groupingBy(Function.identity(), counting())));
 
-            List<String> friendsCasaBlanca = template.getTraversalVertex()
+            List<String> friendsCasablanca = template.getTraversalVertex()
                     .hasLabel("City")
-                    .has("name", "Casa Blanca")
+                    .has("name", "Casablanca")
                     .in(TRAVELS).<Traveler>getResult().map(Traveler::getName).collect(toList());
 
             System.out.println("The city most fun: "+ mostFunCity);
@@ -130,7 +147,7 @@ public final class TravelApp {
             System.out.println("The person who traveled business: "+ personTravelWork);
             System.out.println("The person who traveled: "+ personTravel);
 
-            System.out.println("Friends because went to Casa Blanca: " + casaBlanca);
+            System.out.println("Friends because went to Casablanca: " + casablanca);
         }
     }
 }

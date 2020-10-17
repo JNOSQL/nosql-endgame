@@ -54,21 +54,24 @@ public class GodsTemplateApp {
                     .orElseGet(() ->
                             template.insert(new God(null, "Thor", "Thunder")));
 
+            God odin = template.getTraversalVertex()
+                    .hasLabel(God.class)
+                    .has("name", "Odin")
+                    .<God>next()
+                    .orElseGet(() ->
+                            template.insert(new God(null, "Odin", "Creation")));
+            
 
             template.edge(ullr, "stepbrother", magni);
             template.edge(magni, "stepbrother", ullr);
 
             template.edge(thor, "father", magni);
             template.edge(thor, "stepfather", ullr);
-
+            template.edge(odin, "father", thor);
+            
             Optional<God> god = template.getTraversalVertex(ullr.getId()).next();
 
             System.out.println("Query: " + god);
-            
-            // Cleaning up
-            template.delete(ullr.getId());
-            template.delete(thor.getId());
-            template.delete(magni.getId());
         }
 
         System.exit(0);

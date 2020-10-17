@@ -2,7 +2,6 @@ package org.jnosql.demo.micronaut.neo4j.api;
 
 import java.util.stream.Stream;
 
-import javax.annotation.Nullable;
 import javax.inject.Inject;
 
 import org.jnosql.demo.micronaut.neo4j.domain.City;
@@ -21,21 +20,19 @@ public class CityController {
 	@Inject
 	CityRepository repo;
 	
-//    @Get("/")
-//    public HttpResponse home()
-//    {
-//            return HttpResponse.ok(); 
-//    }
-	
-    @Post("/new")
-    public HttpResponse createNewCity(@QueryValue(value = "name") String name, @QueryValue(value = "country") String country) {
-    	//System.out.println("Name=" + name + " Country=" + country); TODO change to logging
-    	final long cities = repo.countAll();
+    @SuppressWarnings("rawtypes")
+	@Post("/new")
+    public HttpResponse create(@QueryValue(value = "name") String name, @QueryValue(value = "id") Long id) {
+    	//System.out.println("Name=" + name + " Country=" + country); TODO change to logging    	
     	//System.out.println(cities + " cities."); TODO change to logging
     	final City city = new City();
-    	city.id = cities+1;
     	city.name = name;
-    	city.country = country;
+    	if (id!=null) {
+    		city.id = id;
+    	} else {
+    		final long cities = repo.countAll();
+    		city.id = cities+1;
+    	}
     	repo.save(city);
     	return HttpResponse.created(city);
     }
@@ -45,8 +42,9 @@ public class CityController {
         return repo.findByName(name);
     }
     
-    @Delete("/delete/{name}")
-    public HttpResponse deleteCity(String name) {
+    @SuppressWarnings("rawtypes")
+	@Delete("/delete/{name}")
+    public HttpResponse delete(String name) {
     	Stream<City> cities = repo.findByName(name);
     	City c = cities.findFirst().get();
     	int i = 0;

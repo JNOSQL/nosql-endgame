@@ -50,5 +50,4 @@ public class CityNeo4jRepository implements CityRepository {
 			  return v.size() > 0 ? v.get(0).asLong() : 0;
 		   }
 	}
-
 }
