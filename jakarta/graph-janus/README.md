@@ -16,12 +16,11 @@ Library recommendation, category based that shows the software categories, the s
 
 ![BookApp](Book.png)
 
-### MarketingApp
+### HR Solution
 
+The HR solution that allows to match some rules based on the relationship between four people.
 
-The marketing campaign that needs to match from some rules relationship based with four people.
-
-![MarketingApp](Marketing.png)
+![HRSApp](HR.png)
 
 ### TravelApp
 
