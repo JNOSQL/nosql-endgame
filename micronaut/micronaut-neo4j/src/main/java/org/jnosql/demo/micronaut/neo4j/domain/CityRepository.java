@@ -5,6 +5,6 @@ import java.util.stream.*;
 public interface CityRepository {
 	void save(City c);
 	Stream<City> findByName(String name);
-	int delete(City c);
+	int delete(String name);
 	long countAll();
 }

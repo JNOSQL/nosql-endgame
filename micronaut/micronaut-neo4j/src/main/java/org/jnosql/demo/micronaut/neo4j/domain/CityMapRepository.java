@@ -7,7 +7,7 @@ import java.util.concurrent.*;
 
 @Singleton
 public class CityMapRepository implements CityRepository {
-   private final Map<Long,City> data=new ConcurrentHashMap<>();
+   private final Map<Long,City> data = new ConcurrentHashMap<>();
 
    public void save(City c) {
       data.putIfAbsent(c.id, c);
@@ -16,14 +16,17 @@ public class CityMapRepository implements CityRepository {
       return data.values().stream().filter(c -> c.name.contains(name));
    }
    
-   public int delete(City c) {
+   public int delete(String name) {
 	   //TODO make this nicer with lambda
 	   int i = 0;
-	   for (City city : data.values())  {
-		   if (c.name.equals(city.name)) {
-			   City removed = data.remove(city);
-			   if (removed != null) i++;				   
-		   }	   
+	   if (name != null) {
+		   for (City city : data.values())  {
+			   if (name.equals(city.name)) {
+				@SuppressWarnings("unlikely-arg-type")
+				City removed = data.remove(city);
+				   if (removed != null) i++;				   
+			   }	   
+		   }
 	   }
 	   return i;
    }

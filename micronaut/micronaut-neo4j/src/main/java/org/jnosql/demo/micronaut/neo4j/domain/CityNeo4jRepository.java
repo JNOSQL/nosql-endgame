@@ -28,16 +28,16 @@ public class CityNeo4jRepository implements CityRepository {
    public Stream<City> findByName(String name) {
       try (Session s = driver.session()) {
 	      String statement = "MATCH (c:City) WHERE c.name contains $name RETURN c";
-          return s.readTransaction(tx -> tx.run(statement, singletonMap("name",name)))
+          return s.readTransaction(tx -> tx.run(statement, singletonMap("name", name)))
                   .list(record -> new City(record.get("c").asMap())).stream();
       }
    }
    
-   public int delete(City city) {
+   public int delete(String name) {
 	   try (Session s = driver.session()) {
 		  String statement = "MATCH (c:City) WHERE c.name contains $name DELETE c";
-		  StatementResult r = s.run(statement);		  
-		  return r.summary().counters().nodesDeleted();
+		  StatementResult r = s.run(statement, singletonMap("name", name));		  
+		  return r.summary().counters().nodesDeleted();		  
 	   }
    }
 

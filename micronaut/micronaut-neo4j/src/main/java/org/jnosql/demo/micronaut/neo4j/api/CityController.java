@@ -22,17 +22,14 @@ public class CityController {
 	
     @SuppressWarnings("rawtypes")
 	@Post("/new")
-    public HttpResponse create(@QueryValue(value = "name") String name, @QueryValue(value = "id") Long id) {
-    	//System.out.println("Name=" + name + " Country=" + country); TODO change to logging    	
+    public HttpResponse create(@QueryValue(value = "name") String name, @QueryValue(value = "country") String country) {
+    	//System.out.println("Name=" + name + " Country=" + country); TODO change to logging
+    	final long cities = repo.countAll();
     	//System.out.println(cities + " cities."); TODO change to logging
     	final City city = new City();
+    	city.id = cities+1;
     	city.name = name;
-    	if (id!=null) {
-    		city.id = id;
-    	} else {
-    		final long cities = repo.countAll();
-    		city.id = cities+1;
-    	}
+    	city.country = country;
     	repo.save(city);
     	return HttpResponse.created(city);
     }
@@ -44,15 +41,13 @@ public class CityController {
     
     @SuppressWarnings("rawtypes")
 	@Delete("/delete/{name}")
-    public HttpResponse delete(String name) {
-    	Stream<City> cities = repo.findByName(name);
-    	City c = cities.findFirst().get();
+    public HttpResponse delete(String name) {    	
     	int i = 0;
-    	if (c != null) {
-    		i = repo.delete(c);
+    	if (name != null) {
+    		i = repo.delete(name);
     	}
         if (i>0) {
-        	return HttpResponse.ok(c);
+        	return HttpResponse.ok(String.format("%s Has Fallen", name));
         } else {
         	return HttpResponse.noContent();
         }
