@@ -10,7 +10,6 @@
   ~
   ~ Contributors:
   ~
-  ~ Otavio Santana
   ~ Werner Keil
   -->
 
@@ -72,10 +71,13 @@
     </dependencies>
 
     <modules>
+    	<module>cassandra</module>
     	<module>graph-janus</module>
         <module>graph-neo4j</module>
         <module>graph-neo4j-standalone</module>
+        <module>hazelcast</module>
         <module>mongodb</module>
+        <module>redis</module>
         <!-- >module>combined</module -->
     </modules>
 
