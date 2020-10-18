@@ -12,7 +12,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/city/new?name=San%20Francisco&country=USA",
+					"raw": "http://localhost:8080/api/city/new?name=London&country=UK",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -26,11 +26,11 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "San%20Francisco"
+							"value": "London"
 						},
 						{
 							"key": "country",
-							"value": "USA"
+							"value": "UK"
 						}
 					]
 				},
@@ -66,7 +66,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/city/named/Frankfurt",
+					"raw": "http://localhost:8080/api/city/named/New%20York",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -76,7 +76,7 @@
 						"api",
 						"city",
 						"named",
-						"Frankfurt"
+						"New%20York"
 					]
 				}
 			},
@@ -88,7 +88,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/city/delete/Frankfurt",
+					"raw": "http://localhost:8080/api/city/delete/London",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -98,7 +98,7 @@
 						"api",
 						"city",
 						"delete",
-						"Frankfurt"
+						"London"
 					]
 				}
 			},

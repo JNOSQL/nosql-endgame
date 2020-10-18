@@ -66,11 +66,31 @@ public final class TravelApp {
                     .<Traveler>next()
                     .orElseGet(() -> template.insert(Traveler.of("Banner")));
 
-            City sanFrancisco = template.insert(City.of("San Francisco"));
-            City moscow = template.insert(City.of("Moscow"));
-            City newYork = template.insert(City.of("New York"));
-            City saoPaulo = template.insert(City.of("São Paulo"));
-            City casablanca = template.insert(City.of("Casablanca"));
+            City sanFrancisco = template.getTraversalVertex()
+                    .hasLabel(City.class)
+                    .has("name", "San Francisco")
+                    .<City>next()
+                    .orElseGet(() -> template.insert(City.of("San Francisco")));
+            City moscow = template.getTraversalVertex()
+                    .hasLabel(City.class)
+                    .has("name", "Moscow")
+                    .<City>next()
+                    .orElseGet(() -> template.insert(City.of("Moscow")));
+            City newYork = template.getTraversalVertex()
+                    .hasLabel(City.class)
+                    .has("name", "New York")
+                    .<City>next()
+                    .orElseGet(() -> template.insert(City.of("New York")));
+            City saoPaulo = template.getTraversalVertex()
+                    .hasLabel(City.class)
+                    .has("name", "São Paulo")
+                    .<City>next()
+                    .orElseGet(() -> template.insert(City.of("São Paulo")));
+            City casablanca = template.getTraversalVertex()
+                    .hasLabel(City.class)
+                    .has("name", "Casablanca")
+                    .<City>next()
+                    .orElseGet(() -> template.insert(City.of("Casablanca")));
 
             template.edge(stark, TRAVELS, sanFrancisco).add(GOAL, FUN);
             template.edge(stark, TRAVELS, moscow).add(GOAL, FUN);
@@ -134,7 +154,8 @@ public final class TravelApp {
                     .map(Traveler::getName)
                     .collect((groupingBy(Function.identity(), counting())));
 
-            List<String> friendsCasablanca = template.getTraversalVertex()
+            @SuppressWarnings("unused")
+			List<String> friendsCasablanca = template.getTraversalVertex()
                     .hasLabel("City")
                     .has("name", "Casablanca")
                     .in(TRAVELS).<Traveler>getResult().map(Traveler::getName).collect(toList());
