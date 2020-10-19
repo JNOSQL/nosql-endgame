@@ -1,40 +1,26 @@
+/*
+ * Copyright (c) 2020 Werner Keil and others
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * and Apache License v2.0 which accompanies this distribution.
+ * The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
+ * and the Apache License v2.0 is available at http://www.opensource.org/licenses/apache2.0.php.
+ *
+ * You may elect to redistribute this code under either of these licenses.
+ *
+ * Contributors:
+ *
+ * Werner Keil
+ */
 package org.jnosql.demo.micronaut.mongodb.repository;
 
-import com.mongodb.reactivestreams.client.MongoClient;
-import com.mongodb.reactivestreams.client.MongoCollection;
-import io.reactivex.Flowable;
-import io.reactivex.Single;
 import java.util.List;
-import javax.inject.Singleton;
-
 import org.jnosql.demo.micronaut.mongodb.model.God;
 
-import static com.mongodb.client.model.Filters.eq;
-
-@Singleton
-public class GodRepository {
-
-    private final MongoClient mongoClient;
-
-    public GodRepository(MongoClient mongoClient) {
-        this.mongoClient = mongoClient;
-    }
-
-    public List<God> findByName(String name) {
-        return Flowable.fromPublisher(
-                getCollection().find(eq(God.DISCRIMINATOR_KEY, name)))
-                .toList()
-                .blockingGet();
-    }
-
-    public God insert(God god) {
-        Single.fromPublisher(getCollection().insertOne(god)).blockingGet();
-        return god;
-    }
-
-    private MongoCollection<God> getCollection() {
-        return mongoClient
-                .getDatabase("mythology")
-                .getCollection("gods", God.class);
-    }
+public interface GodRepository {
+	boolean save(God g);
+	List<God> findAll();
+	List<God> findByName(String name);
+	long delete(String name);
+	long countAll();
 }

@@ -17,17 +17,17 @@ class GodRepositoryTest {
     private static final Logger log = LoggerFactory.getLogger(GodRepositoryTest.class);
 
     @Inject
-    GodRepository godRepository;
+    GodMongoRepository godMongoRepository;
 
     @SuppressWarnings("unused")
 	@Test
     @Order(1)
     void insertThenRead() {
 
-        God ullr = godRepository.insert(new God("Ullr"));
-        God thor = godRepository.insert(new God("Thor"));
-        List<God> warriors = godRepository.findByName("Thor");
-        List<God> hunters = godRepository.findByName("Ullr");
+        boolean ullrSaved = godMongoRepository.save(new God("Ullr"));
+        boolean thorSaved = godMongoRepository.save(new God("Thor"));
+        List<God> warriors = godMongoRepository.findByName("Thor");
+        List<God> hunters = godMongoRepository.findByName("Ullr");
         log.info("{} hunters and {} warriors in the DB", hunters.size(), warriors.size());
         Assertions.assertFalse(hunters.isEmpty());
         Assertions.assertFalse(warriors.isEmpty());
@@ -36,14 +36,14 @@ class GodRepositoryTest {
     @Test
     @Order(2)
     void readWarriorWithoutInsertingFirst() {
-        List<God> result = godRepository.findByName("Thor");
+        List<God> result = godMongoRepository.findByName("Thor");
         Assertions.assertFalse(result.isEmpty());
     }
 
     @Test
     @Order(3)
     void readHunterWithoutInsertingFirst() {
-        List<God> result = godRepository.findByName("Ullr");
+        List<God> result = godMongoRepository.findByName("Ullr");
         Assertions.assertFalse(result.isEmpty());
     }
 }

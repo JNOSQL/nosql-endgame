@@ -1,13 +1,13 @@
 {
 	"info": {
 		"_postman_id": "13d4599f-e37c-4e1b-b900-d3c014317704",
-		"name": "NoSQL Endgame Neo4j",
+		"name": "NoSQL Endgame Micronaut Neo4j",
 		"description": "Neo4j Demo DB",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "http://localhost:8080/api/city/new?name&country",
+			"name": "addCity()",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -39,7 +39,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/city/count",
+			"name": "countAllCities()",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -56,12 +56,12 @@
 						"count"
 					]
 				},
-				"description": "Get a named city"
+				"description": "Coung all cities"
 			},
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/city/named",
+			"name": "getCityByName()",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -83,7 +83,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/api/city/delete",
+			"name": "deleteCityByName()",
 			"request": {
 				"method": "DELETE",
 				"header": [],

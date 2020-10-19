@@ -2,9 +2,9 @@ package org.jnosql.demo.micronaut.mongodb;
 
 import io.micronaut.runtime.Micronaut;
 
-public class Application {
+public class GodsApplication {
 
     public static void main(String[] args) {
-        Micronaut.run(Application.class);
+        Micronaut.run(GodsApplication.class);
     }
 }

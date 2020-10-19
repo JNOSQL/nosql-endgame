@@ -1,14 +1,15 @@
 package org.jnosql.demo.micronaut.mongodb.model;
 
 import java.util.Objects;
-import org.bson.codecs.pojo.annotations.BsonDiscriminator;
 
-@BsonDiscriminator(key = God.DISCRIMINATOR_KEY)
 public class God {
     public static final String DISCRIMINATOR_KEY = "name";
 
     private String name;
     private String power;
+    
+    public God() {    	
+    }
     
     public God(String type) {
         this.name = type;
