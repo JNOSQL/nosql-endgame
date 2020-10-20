@@ -63,12 +63,7 @@ public class GodsTemplateApp {
 
             Optional<God> god = template.getTraversalVertex(ullr.getId()).next();
 
-            System.out.println("Query: " + god);
-            
-            // Cleaning up
-            template.delete(ullr.getId());
-            template.delete(thor.getId());
-            template.delete(magni.getId());
+            System.out.println("Query: " + god);            
         }
 
         System.exit(0);
