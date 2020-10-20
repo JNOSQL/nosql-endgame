@@ -107,10 +107,12 @@ public final class HRSTemplateApp {
                     .distinct()
                     .collect(toList());
 
-            System.out.println("Developers has salary greater than 3000 and age between 30 and 55: " + developers);
-            System.out.println("Person who the Developers target know: " + peopleWhoDeveloperKnows);
+            System.out.println("Developers have salary greater than 3000 and age between 30 and 55: " + developers);
+            System.out.println("Person who the Developers know: " + peopleWhoDeveloperKnows);
             System.out.println("The person and the developers target: " + both);
-            System.out.println("Developers for Valentine's day: " + couple);     
+            System.out.println("Developers for Valentine's day: " + couple);
+            
+            System.exit(0);
         }
     }
 }
