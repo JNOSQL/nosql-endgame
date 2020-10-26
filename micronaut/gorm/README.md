@@ -1,4 +1,4 @@
-# micronaut-gorm-examples
+# micronaut-gorm
 
 Micronaut GORM Examples
 
