@@ -40,14 +40,14 @@ public class GodsTemplateApp {
 
             template.insert(hunter);
             final Optional<God> god = template.find(God.class, 1L);
-            System.out.println("query : " + god);
+            System.out.println("Query by id: " + god);
 
             DocumentDeleteQuery deleteQuery = delete().from("God")
                     .where("_id").eq(1L).build();
 
             template.delete(deleteQuery);
 
-            System.out.println("query again: " +
+            System.out.println("Query after delete: " +
                     template.find(God.class, 1L));
         }
 

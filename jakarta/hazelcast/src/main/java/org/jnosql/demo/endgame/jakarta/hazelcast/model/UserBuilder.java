@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Otávio Santana and others
+ * Copyright (c) 2017, 2020 Otávio Santana and others
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * and Apache License v2.0 which accompanies this distribution.
@@ -11,6 +11,7 @@
  * Contributors:
  *
  * Otavio Santana
+ * Werner Keil
  */
 
 package org.jnosql.demo.endgame.jakarta.hazelcast.model;
@@ -23,6 +24,8 @@ public class UserBuilder {
     private String username;
 
     private String name;
+    
+    private String emailAddress;
 
     private List<String> phones;
 
@@ -36,7 +39,11 @@ public class UserBuilder {
         this.name = name;
         return this;
     }
-
+    
+    public UserBuilder withEmail(String email) {
+        this.emailAddress = email;
+        return this;
+    }
 
     public UserBuilder withPhones(List<String> phones) {
         this.phones = phones;
@@ -44,6 +51,6 @@ public class UserBuilder {
     }
 
     public User build() {
-        return new User(username, name, phones);
+        return new User(username, name, emailAddress, phones);
     }
 }

@@ -30,6 +30,7 @@ public class UserRepoApp {
 
     private static final User USER = User.builder().
             withPhones(Arrays.asList("234", "432"))
+            .withEmail("user@na.me")
             .withUsername("username")
             .withName("Name")
             .build();

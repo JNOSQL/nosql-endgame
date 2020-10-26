@@ -37,6 +37,8 @@ public class User implements Serializable {
     private String userName;
 
     private String name;
+    
+    private String emailAddress;
 
     private List<String> phones;
 
@@ -55,9 +57,10 @@ public class User implements Serializable {
     User() {
     }
 
-    User(String userName, String name, List<String> phones) {
+    User(String userName, String name, String email, List<String> phones) {
         this.userName = userName;
         this.name = name;
+        this.emailAddress = email;
         this.phones = phones;
     }
 
@@ -84,6 +87,7 @@ public class User implements Serializable {
         final StringBuilder sb = new StringBuilder("User{");
         sb.append("userName='").append(userName).append('\'');
         sb.append(", name='").append(name).append('\'');
+        sb.append(", email='").append(emailAddress).append('\'');
         sb.append(", phones=").append(phones);
         sb.append('}');
         return sb.toString();

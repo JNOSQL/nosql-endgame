@@ -39,10 +39,11 @@ public class GodsRepoApp {
 
             Optional<God> god = repository.findById(1L);
             System.out.println("Query by id : " + god);
-            System.out.println("Query by Name : " + repository.findByName("Ullr"));
+            System.out.println("Query by name : " + repository.findByName("Ullr"));
 
             repository.deleteById(1L);
-
+            
+            System.out.println("Query after delete: " +	repository.findById(1L));
         }
 
         System.exit(0);
