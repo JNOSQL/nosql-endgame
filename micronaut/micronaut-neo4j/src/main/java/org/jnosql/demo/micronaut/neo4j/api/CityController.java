@@ -39,7 +39,6 @@ public class CityController {
     public HttpResponse create(@QueryValue(value = "name") String name, @QueryValue(value = "country") String country) {
     	//System.out.println("Name=" + name + " Country=" + country); TODO change to logging
     	final long cities = repo.countAll();
-    	//System.out.println(cities + " cities."); TODO change to logging
     	final City city = new City();
     	city.id = cities+1;
     	city.name = name;
@@ -70,6 +69,5 @@ public class CityController {
     @Get("/count")
     public long count() {
         return repo.countAll();
-    }
-    
+    }   
 }

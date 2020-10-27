@@ -29,7 +29,8 @@ public final class HRSRepositoryApp {
     private HRSRepositoryApp() {
     }
 
-    public static void main(String[] args) {
+    @SuppressWarnings("unused")
+	public static void main(String[] args) {
 
         try (SeContainer container = SeContainerInitializer.newInstance().initialize()) {
             PersonRepository repository = container.select(PersonRepository.class, DatabaseQualifier.ofGraph()).get();
@@ -53,14 +54,6 @@ public final class HRSRepositoryApp {
             System.out.println("findByAgeBetween");
             repository.findByAgeBetween(30, 50)
                     .forEach(System.out::println);
-            
-            // Cleanup
-            repository.deleteById(bruce.getId());
-            repository.deleteById(natalia.getId());
-            repository.deleteById(pepper.getId());
-            repository.deleteById(tony.getId());
-            
-            //System.out.println(repository.count());
         }
     }
 }
