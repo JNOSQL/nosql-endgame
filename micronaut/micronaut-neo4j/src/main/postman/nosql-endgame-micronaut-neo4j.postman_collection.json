@@ -12,12 +12,12 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/city/new?name=London&country=UK",
+					"raw": "http://localhost:{{port}}/api/city/new?name=London&country=UK",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"city",
@@ -44,12 +44,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/city/count",
+					"raw": "http://localhost:{{port}}/api/city/count",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"city",
@@ -66,12 +66,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/city/named/New%20York",
+					"raw": "http://localhost:{{port}}/api/city/named/New%20York",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"city",
@@ -88,12 +88,12 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/city/delete/London",
+					"raw": "http://localhost:{{port}}/api/city/delete/London",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"city",
@@ -103,6 +103,35 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "dc72c821-1bd1-44b9-941f-e54c5e35276e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "546d226b-a2ea-4a6b-96bc-220e81d07314",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "ffb675fa-3744-4aaa-b6d9-03e43243b006",
+			"key": "port",
+			"value": ""
 		}
 	],
 	"protocolProfileBehavior": {}

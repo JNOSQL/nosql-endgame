@@ -1,8 +1,9 @@
 ---
 micronaut:
-    application:
-        name: org.jnosql.demo.micronaut.neo4j
-
+  application:
+    name: org.jnosql.demo.micronaut.neo4j
+  server:
+    port: 8082
 ---
 neo4j:
   uri: bolt://${NEO4J_HOST:localhost}

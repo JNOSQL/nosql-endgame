@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "de40642f-41b1-49d2-bd84-69f7818a1750",
+		"_postman_id": "6cc8f18a-459a-4717-8a1b-1513e5b9408f",
 		"name": "NoSQL Endgame Micronaut Mongo",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,12 +11,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/gods/count",
+					"raw": "http://localhost:{{port}}/api/gods/count",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"gods",
@@ -44,12 +44,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/gods/",
+					"raw": "http://localhost:{{port}}/api/gods/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"gods",
@@ -79,12 +79,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/gods/Thor",
+					"raw": "http://localhost:{{port}}/api/gods/Thor",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"gods",
@@ -117,12 +117,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/gods/new?name=Thor&power=Thunder",
+					"raw": "http://localhost:{{port}}/api/gods/new?name=Thor&power=Thunder",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"gods",
@@ -151,12 +151,12 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/gods/Ullr",
+					"raw": "http://localhost:{{port}}/api/gods/Ullr",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"gods",
@@ -165,6 +165,35 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d57162e7-5eb5-4084-b3be-6052ef708429",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6efd3222-d25b-41a1-8ba7-ea4e22e23d43",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "f89160e3-ee1b-4e36-a66f-1fd4f3386a4a",
+			"key": "port",
+			"value": ""
 		}
 	],
 	"protocolProfileBehavior": {}
