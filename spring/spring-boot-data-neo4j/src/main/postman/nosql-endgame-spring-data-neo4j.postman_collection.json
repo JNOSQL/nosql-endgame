@@ -36,12 +36,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/movies/A League of Their Own",
+							"raw": "http://localhost:8082/movies/A League of Their Own",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8082",
 							"path": [
 								"movies",
 								"A League of Their Own"
@@ -65,12 +65,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/movies/",
+							"raw": "http://localhost:8082/movies/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8082",
 							"path": [
 								"movies",
 								""

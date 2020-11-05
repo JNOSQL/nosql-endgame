@@ -23,12 +23,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/gods",
+					"raw": "http://localhost:8081/api/gods",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"api",
 						"gods"
@@ -43,12 +43,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/gods?name=Her",
+					"raw": "http://localhost:8081/api/gods?name=Her",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"api",
 						"gods"
@@ -81,12 +81,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/gods/5f789b086997ea37498ed9a2",
+					"raw": "http://localhost:8081/api/gods/5f789b086997ea37498ed9a2",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"api",
 						"gods",
@@ -119,12 +119,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/gods",
+					"raw": "http://localhost:8081/api/gods",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"api",
 						"gods"
@@ -155,12 +155,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/gods/5f789b316997ea37498ed9a3",
+					"raw": "http://localhost:8081/api/gods/5f789b316997ea37498ed9a3",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"api",
 						"gods",
@@ -176,12 +176,12 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/gods/5f78ad9e3efd310563ef3fad",
+					"raw": "http://localhost:8081/api/gods/5f78ad9e3efd310563ef3fad",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"api",
 						"gods",
@@ -197,12 +197,12 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/gods",
+					"raw": "http://localhost:8081/api/gods",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"api",
 						"gods"
