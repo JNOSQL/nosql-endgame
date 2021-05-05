@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Otávio Santana and others
+ * Copyright (c) 2017, 2021 Otávio Santana and others
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * and Apache License v2.0 which accompanies this distribution.
@@ -11,6 +11,7 @@
  * Contributors:
  *
  * Otavio Santana
+ * Werner Keil
  */
 
 package org.jnosql.demo.endgame.jakarta.hazelcast;
@@ -26,6 +27,11 @@ import org.jnosql.demo.endgame.jakarta.hazelcast.model.User;
 import java.util.Arrays;
 import java.util.Optional;
 
+/**
+ * Demo application showing the use of the {@link KeyValueTemplate} on top of a Hazelcast system.
+ * @author Otavio Santana
+ * @author Werner Keil
+ */
 public class UserTemplateApp {
 
     private static final User USER = User.builder().
@@ -49,6 +55,7 @@ public class UserTemplateApp {
         
     }
 
+    /** Just to keep it a singleton */
     private UserTemplateApp() {
     }
 }

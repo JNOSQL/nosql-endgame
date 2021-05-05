@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 Otávio Santana and others
+ * Copyright (c) 2017, 2021 Otávio Santana and others
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * and Apache License v2.0 which accompanies this distribution.
@@ -26,6 +26,13 @@ import javax.enterprise.inject.se.SeContainerInitializer;
 import java.util.Arrays;
 import java.util.Optional;
 
+/**
+ * Demo application showing the use of the <b>Repository Pattern</b> on top of a Hazelcast system.
+ * @author Otavio Santana
+ * @author Werner Keil 
+ * @see <a href="https://en.wikipedia.org/wiki/Domain-driven_design#Building_blocks">Wikipedia:
+ *      Domain-Driven Design - Building Blocks</a>
+ */
 public class UserRepoApp {
 
     private static final User USER = User.builder().
@@ -49,6 +56,7 @@ public class UserRepoApp {
         }
     }
 
+    /** Just to keep it a singleton */
     private UserRepoApp() {
     }
 }
