@@ -11,12 +11,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/users",
+					"raw": "http://localhost:{{port}}/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"users"
 					]
@@ -30,12 +30,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/users/{{ObjectId}}",
+					"raw": "http://localhost:{{port}}/users/{{ObjectId}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"users",
 						"{{ObjectId}}"
@@ -51,7 +51,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"emailAddress\": \"jean@jeantessier.com\", \"password\": \"abcd1234\", \"fullname\": \"Jean Tessier\"}",
+					"raw": "{\"emailAddress\": \"werner@catmedia.us\", \"password\": \"abcd1234\", \"fullname\": \"Werner Keil\"}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -59,12 +59,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/users",
+					"raw": "http://localhost:{{port}}/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"users"
 					]
@@ -79,7 +79,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"password\": \"abc123\"}",
+					"raw": "{\"password\": \"abc456\"}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -87,12 +87,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/users/{{ObjectId}}",
+					"raw": "http://localhost:{{port}}/users/{{ObjectId}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"users",
 						"{{ObjectId}}"
@@ -116,12 +116,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/users/{{ObjectId}}",
+					"raw": "http://localhost:{{port}}/users/{{ObjectId}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"users",
 						"{{ObjectId}}"
@@ -145,12 +145,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/users",
+					"raw": "http://localhost:{{port}}/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"users"
 					]
@@ -163,7 +163,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8cad6b0c-6ce1-49d6-a875-ce856d6363e2",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -173,7 +172,6 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d4eb7627-7ac5-40ce-bcab-e9778e7e2faf",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -183,10 +181,12 @@
 	],
 	"variable": [
 		{
-			"id": "b8d3be71-5101-413a-a67f-b74e49404396",
 			"key": "ObjectId",
 			"value": ""
+		},
+		{
+			"key": "port",
+			"value": "8080"
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
