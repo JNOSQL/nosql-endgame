@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Werner Keil and others
+ * Copyright (c) 2020, 2021 Werner Keil and others
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * and Apache License v2.0 which accompanies this distribution.
@@ -22,6 +22,10 @@ import java.util.Optional;
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
 
+/**
+ * Demo application showing the use of the {@link GraphTemplate} on top of a Neo4j system.
+ * @author Werner Keil
+ */
 public class GodsTemplateApp {
 
     public static void main(String[] args) {

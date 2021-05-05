@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 Werner Keil and others
+ * Copyright (c) 2020, 2021 Werner Keil and others
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * and Apache License v2.0 which accompanies this distribution.
@@ -22,6 +22,12 @@ import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
 import java.util.Optional;
 
+/**
+ * Demo application showing the use of the <b>Repository Pattern</b> on top of a Hazelcast system.
+ * @author Werner Keil 
+ * @see <a href="https://en.wikipedia.org/wiki/Domain-driven_design#Building_blocks">Wikipedia:
+ *      Domain-Driven Design - Building Blocks</a>
+ */
 public class GodsRepoApp {
 
     public static void main(String[] args) {
