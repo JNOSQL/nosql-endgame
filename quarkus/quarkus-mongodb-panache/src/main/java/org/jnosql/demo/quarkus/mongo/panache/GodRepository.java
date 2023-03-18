@@ -1,4 +1,4 @@
-package com.challenger;
+package org.jnosql.demo.quarkus.mongo.panache;
 
 import io.quarkus.mongodb.panache.PanacheMongoRepository;
 import io.quarkus.panache.common.Sort;

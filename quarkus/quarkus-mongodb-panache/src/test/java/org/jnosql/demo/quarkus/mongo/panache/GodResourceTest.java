@@ -1,10 +1,12 @@
-package com.challenger;
+package org.jnosql.demo.quarkus.mongo.panache;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.with;
 
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
+
+import org.jnosql.demo.quarkus.mongo.panache.God;
 import org.junit.jupiter.api.Test;
 
 @QuarkusTest

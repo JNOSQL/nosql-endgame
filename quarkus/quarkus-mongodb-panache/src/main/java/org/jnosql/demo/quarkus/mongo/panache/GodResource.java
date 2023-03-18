@@ -1,4 +1,4 @@
-package com.challenger;
+package org.jnosql.demo.quarkus.mongo.panache;
 
 import java.util.List;
 import javax.inject.Inject;
