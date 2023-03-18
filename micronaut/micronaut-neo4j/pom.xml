@@ -8,13 +8,7 @@
     <jdk.version>11</jdk.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <exec.mainClass>org.jnosql.demo.micronaut.neo4j.CityApplication</exec.mainClass>
-  </properties>
-  <repositories>
-    <repository>
-      <id>jcenter.bintray.com</id>
-      <url>https://jcenter.bintray.com</url>
-    </repository>
-  </repositories>
+  </properties> 
   <dependencyManagement>
     <dependencies>
       <dependency>
