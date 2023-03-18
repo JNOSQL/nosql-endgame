@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "06af6e58-12a6-4aef-9aec-5f56a1999e91",
+		"name": "quarkus-tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "save-gods",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Zero1\",\n\t\"power\": \"Blazer1\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gods",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gods"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-god",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/gods/search/Link",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gods",
+						"search",
+						"Link"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-god-by-id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/gods/5fdb393988c5723d1edd92b2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gods",
+						"5fdb393988c5723d1edd92b2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-gods",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/gods",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gods"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "count-god",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/gods/count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gods",
+						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-gods-ordered-by-name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/gods/orderedByName",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gods",
+						"orderedByName"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-god",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/gods/5fdb397488c5723d1edd92b5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gods",
+						"5fdb397488c5723d1edd92b5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-god",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"5fda11fa88c5723d1edd92ad\",\n\t\"name\": \"Mario Bros\",\n\t\"power\": \"Thunder sword\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gods/5fda11fa88c5723d1edd92ad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gods",
+						"5fda11fa88c5723d1edd92ad"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
