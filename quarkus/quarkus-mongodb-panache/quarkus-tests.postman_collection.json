@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "06af6e58-12a6-4aef-9aec-5f56a1999e91",
+		"_postman_id": "eaaf5817-7721-47ad-87f9-cbf1b993142f",
 		"name": "quarkus-tests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -45,16 +45,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/gods/search/Link",
+					"raw": "http://localhost:{{port}}/gods/search/{{keyword}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"gods",
 						"search",
-						"Link"
+						"{{keyword}}"
 					]
 				}
 			},
@@ -66,7 +66,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/gods/5fdb393988c5723d1edd92b2",
+					"raw": "http://localhost:8080/gods/64150f31740f1f2fa1ddb42c",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -74,7 +74,7 @@
 					"port": "8080",
 					"path": [
 						"gods",
-						"5fdb393988c5723d1edd92b2"
+						"64150f31740f1f2fa1ddb42c"
 					]
 				}
 			},
@@ -86,12 +86,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/gods",
+					"raw": "http://localhost:{{port}}/gods",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"gods"
 					]
@@ -105,12 +105,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/gods/count",
+					"raw": "http://localhost:{{port}}/gods/count",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"gods",
 						"count"
@@ -125,12 +125,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/gods/orderedByName",
+					"raw": "http://localhost:{{port}}/gods/orderedByName",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "{{port}}",
 					"path": [
 						"gods",
 						"orderedByName"
@@ -190,7 +190,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/gods/5fda11fa88c5723d1edd92ad",
+					"raw": "http://localhost:8080/gods/64150f31740f1f2fa1ddb42c",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -198,12 +198,43 @@
 					"port": "8080",
 					"path": [
 						"gods",
-						"5fda11fa88c5723d1edd92ad"
+						"64150f31740f1f2fa1ddb42c"
 					]
 				}
 			},
 			"response": []
 		}
 	],
-	"protocolProfileBehavior": {}
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "port",
+			"value": "8080",
+			"type": "default"
+		},
+		{
+			"key": "keyword",
+			"value": "Zero1",
+			"type": "default"
+		}
+	]
 }
