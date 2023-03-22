@@ -9,7 +9,12 @@
     <name>Quarkus NoSQL Demos</name>
     <url>http://www.jnosql.org</url>
 	<packaging>pom</packaging>
-
+    <properties>
+        <jdk.version>11</jdk.version>
+        <maven.compile.targetLevel>${jdk.version}</maven.compile.targetLevel>
+    	<maven.compile.sourceLevel>${jdk.version}</maven.compile.sourceLevel>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
     <modules>
 		<module>quarkus-mongodb-panache</module>
         <module>quarkus-mongodb-panache-reactive</module>
@@ -17,6 +22,6 @@
     <parent>
     	<groupId>org.jnosql.demo</groupId>
     	<artifactId>endgame-parent</artifactId>
-    	<version>0.1-SNAPSHOT</version>
+    	<version>1.0-SNAPSHOT</version>
     </parent>
 </project>

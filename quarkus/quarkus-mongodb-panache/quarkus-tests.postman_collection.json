@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "eaaf5817-7721-47ad-87f9-cbf1b993142f",
-		"name": "quarkus-tests",
+		"name": "NoSQL Endgame Quarkus Mongo",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [

@@ -10,7 +10,7 @@
     </parent>
     <groupId>org.jnosql.demo.endgame</groupId>
     <artifactId>spring-boot-data-neo4j</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
