@@ -23,12 +23,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8081/api/gods",
+					"raw": "http://localhost:{{port}}/api/gods",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8081",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"gods"
@@ -43,12 +43,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/gods?name=Her",
+					"raw": "http://localhost:{{port}}/api/gods?name=Her",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8081",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"gods"
@@ -81,16 +81,16 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8081/api/gods/5f789b086997ea37498ed9a2",
+					"raw": "http://localhost:{{port}}/api/gods/{{idToGet}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8081",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"gods",
-						"5f789b086997ea37498ed9a2"
+						"{{idToGet}}"
 					]
 				},
 				"description": "all gods"
@@ -119,12 +119,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/api/gods",
+					"raw": "http://localhost:{{port}}/api/gods",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8081",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"gods"
@@ -147,7 +147,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Hera\"\n}",
+					"raw": "{\n\t\"name\": \"{{nameToUpdate}}\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -155,16 +155,16 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8081/api/gods/5f789b316997ea37498ed9a3",
+					"raw": "http://localhost:{{port}}/api/gods/{{idToUpdate}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8081",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"gods",
-						"5f789b316997ea37498ed9a3"
+						"{{idToUpdate}}"
 					]
 				}
 			},
@@ -176,16 +176,16 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/gods/5f78ad9e3efd310563ef3fad",
+					"raw": "http://localhost:{{port}}/api/gods/{{idToDelete}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8081",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"gods",
-						"5f78ad9e3efd310563ef3fad"
+						"{{idToDelete}}"
 					]
 				}
 			},
@@ -197,12 +197,12 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/api/gods",
+					"raw": "http://localhost:{{port}}/api/gods",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8081",
+					"port": "{{port}}",
 					"path": [
 						"api",
 						"gods"
@@ -216,7 +216,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "c62733ad-fdfa-4f01-a9f8-d59583fc912b",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -226,7 +225,6 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "6adde4ed-be67-4d98-8599-364beb953d21",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -234,5 +232,31 @@
 			}
 		}
 	],
-	"protocolProfileBehavior": {}
+	"variable": [
+		{
+			"key": "port",
+			"value": "8082",
+			"type": "default"
+		},
+		{
+			"key": "idToGet",
+			"value": "5f88de91a1e54f4eb41042c2",
+			"type": "default"
+		},
+		{
+			"key": "idToDelete",
+			"value": "6415f5f090924b6c2b20ae0b",
+			"type": "default"
+		},
+		{
+			"key": "idToUpdate",
+			"value": "641519495df7bf6af8182ac6",
+			"type": "default"
+		},
+		{
+			"key": "nameToUpdate",
+			"value": "Hera",
+			"type": "default"
+		}
+	]
 }

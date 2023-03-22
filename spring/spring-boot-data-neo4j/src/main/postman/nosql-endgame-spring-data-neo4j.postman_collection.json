@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "56801d02-fa48-4f9f-be09-2591510c6877",
+		"_postman_id": "f3c88be9-e587-4e07-b72f-04ea7b5d3a36",
 		"name": "nosql-endgame-spring-data-neo4j",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -52,6 +52,9 @@
 				},
 				{
 					"name": "createNewMovie()",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -65,12 +68,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/movies/",
+							"raw": "http://localhost:{{port}}/movies/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8082",
+							"port": "{{port}}",
 							"path": [
 								"movies",
 								""
@@ -79,9 +82,34 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
 	],
-	"protocolProfileBehavior": {}
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "port",
+			"value": "8083",
+			"type": "default"
+		}
+	]
 }
